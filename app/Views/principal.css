@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f1ec;
+    overflow-x: hidden;
+  }
+  
+  .general-container {
+    display: flex;
+    height: 110vh; /* fuerza a ocupar todo el alto de la ventana */
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  /* Texto bien a la izquierda */
+  .text-container {
+    flex: 1;
+    max-width: 45%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Estilo del texto */
+  .text-container p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #4a3728;
+  }
+  
+  /* Imagen ocupa TODO lo que queda */
+  .ilustracion2 {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .ilustracion2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .general-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .text-container {
+      max-width: 100%;
+    }
+  
+    .ilustracion2 {
+      height: auto;
+    }
+  
+    .ilustracion2 img {
+      height: auto;
+    }
+  }
