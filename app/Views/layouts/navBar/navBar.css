@@ -1,0 +1,31 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: rgb(255, 255, 255);
+    height: 60px; /* altura del navbar */
+    overflow: hidden; /* evita que el logo más grande lo expanda */
+}
+
+.navbar a {
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover{
+    transform: scale(1.05);
+}
+
+/* img más grande pero con navbar "estatico" */
+.navbar-brand img {
+    height: 50px;      
+    margin-top: 0px;     /*imagen centrada */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto suave al pasar el mouse */
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,167 @@
+body {
+	font-family: sans-serif;
+}
+
+a {
+	text-decoration: none;
+	transition: 0.3s all ease;
+}
+
+/* Footer */
+.footer {
+	position: relative;
+	color: white;
+	padding: 20px 0;
+	background-color: #271710;
+	margin-top: 3rem;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* Box */
+.box {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	background-color: #b9a78a;
+	position: relative;
+	border-radius: 10px;
+	margin: 20px 0px;
+}
+
+.box-content {
+	flex: 1;
+}
+
+.box h2 {
+	margin-bottom: 0;
+	line-height: 1.5;
+}
+
+.box h3 {
+	font-size: 20px;
+	line-height: 1.5;
+	color: #141d2a;
+	margin-top: 0;
+}
+
+.box-button {
+	margin-left: auto;
+}
+
+.btn {
+	background-color: #141d2a;
+	color: white;
+	padding: 0.75rem 1.25rem;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+/* Footer Content */
+.footer-content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer-column {
+	flex: 1;
+	min-width: 200px;
+	margin-bottom: 2rem;
+}
+
+.footer h3 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+/* Footer Logo */
+.footer-logo {
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	display: inline-block;
+	margin-bottom: 1rem;
+}
+
+.copyright {
+	color: #666873;
+	font-size: 0.8rem;
+}
+
+/* Links */
+.footer-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-links li {
+	margin-bottom: 10px;
+	line-height: 1.5;
+}
+
+.footer-links a {
+	color: #666873;
+}
+
+.footer-links a:hover {
+	color: #fff;
+}
+
+/* Social Links */
+.social-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.social-links li {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.social-links a {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #3F773C;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.box {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.box-button {
+		margin-left: 0;
+		margin-top: 1rem;
+	}
+
+	.footer-column {
+		flex: 0 0 100%;
+	}
+	.footer-content {
+		margin-left: 25px;
+	}
+	
+}

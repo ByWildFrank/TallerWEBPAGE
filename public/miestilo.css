@@ -1,0 +1,50 @@
+
+p { 
+    font-family: Verdana, sans-serif; /* tipo de letra */
+    text-align: justify; /* alineación del texto */
+    color: red; /* color de la fuente */
+    font-size: 24px; /* tamaño de la fuente */
+    font-style: italic; /* estilo */
+    font-weight: bold; /* negrita */
+}
+
+body {
+    background-color: lightblue; /* color de fondo del body */
+}
+
+/* color y alineación de la etiqueta h1 */
+h1 { 
+    color: white;
+    font-weight: bold; /* negrita */
+    text-align: center; /* alineación */
+}
+.centrado {
+    text-align: center; /* Centra el texto */
+    font-weight: bold;  /* Negrita */
+    font-style: italic; /* Cursiva */
+}
+.seccionDIV{
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+*{ margin:0;
+    padding:0;
+    }
+    .titulo{
+     background-color: #92a8d1;
+    margin: 20px;
+    }
+    .parrafo{
+     background-color: green;
+    padding-top:50px;
+    padding-left: 10px;
+    padding-bottom: 60px;
+    padding-right: 300px;
+} 
+footer{
+    background-color: GoldenRod;
+   padding: 10px 20px 30px 40px;
+   margin: 10px 200px;
+}

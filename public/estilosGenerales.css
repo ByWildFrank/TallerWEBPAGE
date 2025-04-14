@@ -1,0 +1,27 @@
+:root {
+    /* Colores principales */
+    --primary: #4D2C2A;      /* Marron cafe oscuro */
+    --secondary: #5A6B46;    /* Verde oliva */
+    --accent: #D28157;       /* Naranja terracota */
+    
+    /* Fondos */
+    --background-light: #F5F2EC;  /* Crema */
+    --background-medium: #E6DFD4; /* Beige */
+    
+    /* Texto */
+    --text-dark: #2D2926;    /* Negro suave */
+    --text-medium: #9A8F86;  /* Gris topo */
+    --text-light: #FFFFFF;   /* Blanco */
+    
+    /* Bordes y detalles */
+    --border-color: #E6DFD4; /* Beige para bordes */
+    --shadow-color: rgba(77, 44, 42, 0.15); /* Sombra basada en el color primario */
+    
+    /* Tipografia */
+    --font-primary: 'Montserrat', sans-serif;  /* Para titulos y navegacion */
+    --font-secondary: 'Lora', serif;  /* Para textos extensos */
+    --font-size-base: 16px;
+    
+    /* sombras */
+    --box-shadow: 0 0.5rem 1rem var(--shadow-color);
+  }
