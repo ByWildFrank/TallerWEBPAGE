@@ -3,7 +3,7 @@
     width: 100%;
     top: 0;
     z-index: 10;
-    background-color: rgb(255, 255, 255);
+    background-color: #f7ecde;
     height: 60px; /* altura del navbar */
     overflow: hidden; /* evita que el logo más grande lo expanda */
 }
@@ -28,4 +28,20 @@
 /* Efecto suave al pasar el mouse */
 .navbar-brand img:hover {
     transform: scale(1.05);
+}
+.logo-img {
+    display: inline-block;
+    width: 120px; /* Ajustá el tamaño que quieras */
+    height: 50px;
+    background-image: url('./MarcaPNGreducida.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px; /* oculta el texto si pusiste "CVA" */
+}
+h5 {
+    font-family: 'Playfair Display', serif;
+}
+a {
+    font-family: 'Playfair Display', serif;
 }

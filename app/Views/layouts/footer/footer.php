@@ -7,14 +7,17 @@
 <footer class="footer mt-auto">
     <div class="container">
         <!-- Box -->
-        <div class="box">
-            <div class="box-content">
+        <div class="box row align-items-center">
+            <div class="col box-content">
                 <h2>Visita nuestro catálogo completo</h2>
                 <h3>Vamo!</h3>
             </div>
-            <div class="box-button">
+            
+            <div class="col box-button align-self-center">
                 <a href="#" class="btn">Ver catálogo</a>
+           
             </div>
+            
         </div>
 
         <!-- Footer Content -->

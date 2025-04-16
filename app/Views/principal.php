@@ -37,9 +37,18 @@
             <img src="https://images.unsplash.com/photo-1582768772255-7fb8066357ce?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
             style="max-width: 100%; height: auto;">
         </div>
+
+
+        
+        
+    </div>
+
+    <div class="mapaMundial">
+        <img src="../public/mapaMundial169.png" style="max-width: 100%; height: auto;">
     </div>
 
     <?= view('layouts/footer/footer') ?>
+
     <script src="/PROYECTO-FRANCO-VARELA/assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 

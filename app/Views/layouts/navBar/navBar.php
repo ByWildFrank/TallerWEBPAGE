@@ -11,9 +11,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="#">
-  <img src="../public/MarcaPNGreducida.png" alt="BEAN" class="logo-img">
-</a>
+    <a class="navbar-brand logo-img" href="#">BEAN</a>
 
     <!-- Menu Offcanvas -->
     <div class="offcanvas offcanvas-start" id="offcanvasNavbar">
@@ -27,7 +25,7 @@
             <a class="nav-link" aria-current="page" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Quiénes Somos</a>
+            <a class="nav-link" href="<?= base_url('quienesSomos')?>">Quiénes Somos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Productos</a>
