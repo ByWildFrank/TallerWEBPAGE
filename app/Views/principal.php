@@ -44,9 +44,15 @@
     </div>
 
     <div class="mapaMundial">
-        <img src="../public/mapaMundial169.png" style="max-width: 100%; height: auto;">
+        <img src="../public/mapaMundial169-Photoroom.png" style="max-width: 100%; height: auto; align-items: center">
+ 
     </div>
 
+    <div class="pie-foto">
+        <p>CONOCÉ EL MUNDO</p>
+        <p>DEL CAFÉ, EXPLORALO</p>
+        <p>TAZA POR TAZA</p>
+    </div>
     <?= view('layouts/footer/footer') ?>
 
     <script src="/PROYECTO-FRANCO-VARELA/assets/js/bootstrap.bundle.min.js"></script>

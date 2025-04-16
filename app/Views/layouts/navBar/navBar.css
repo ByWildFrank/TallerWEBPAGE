@@ -3,7 +3,7 @@
     width: 100%;
     top: 0;
     z-index: 10;
-    background-color: #f7ecde;
+    background-color: #f4f1ec;
     height: 60px; /* altura del navbar */
     overflow: hidden; /* evita que el logo más grande lo expanda */
 }

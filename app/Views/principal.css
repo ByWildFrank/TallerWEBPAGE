@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
-    background-color: #f7ecde !important; 
+    background-color: #f4f1ec !important; 
     overflow-x: hidden;
   }
   
@@ -17,7 +17,6 @@ html, body {
     gap: 20px;
     min-height: 100%; /* Usar min-height para asegurar que tenga suficiente espacio */
   }
-  
 
 
   /* Texto bien a la izquierda */
@@ -76,6 +75,14 @@ html, body {
     .ilustracion2 img {
       height: auto;
     }
+  }
+  .pie-foto p {
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    justify-content: center; /* Horizontal */
+    align-items: center;     /* Vertical */         /* Toma toda la altura visible */
+    text-align: center;      /* Centra texto si es necesario */
+    font-size: 40px;
   }
   .bold {
     font-weight: 700;
