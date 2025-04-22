@@ -43,6 +43,8 @@
         
     </div>
 
+
+    
     <div class="mapaMundial">
         <img src="../public/mapaMundial169-Photoroom.png" style="max-width: 100%; height: auto; align-items: center">
  

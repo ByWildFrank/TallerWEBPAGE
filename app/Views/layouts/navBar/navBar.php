@@ -28,6 +28,9 @@
             <a class="nav-link" href="<?= base_url('quienesSomos')?>">Quiénes Somos</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">Comercialización</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">Productos</a>
           </li>
           <li class="nav-item">
