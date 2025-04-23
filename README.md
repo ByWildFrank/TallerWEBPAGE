@@ -1,60 +1,77 @@
-# CodeIgniter 4 Framework
+# ☕ BEAN - Tu lugar para el café y las meriendas
 
-## What is CodeIgniter?
+**Proyecto desarrollado por:**  
+👨‍💻 Scetti Santiago  
+👨‍💻 Varela Franco
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 📌 Descripción del Proyecto
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+**BEAN** es una plataforma web que ofrece productos relacionados con el café y las meriendas. Nuestro objetivo es brindar una experiencia de compra sencilla y estética, permitiendo a los usuarios descubrir, elegir y adquirir productos desde la comodidad de su casa.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Este proyecto fue desarrollado como parte de la materia **Taller de Programación I** de la **Licenciatura en Sistemas**.
 
-## Important Change with index.php
+---
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 🛠️ Tecnologías Utilizadas
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- **Frontend**
+  - HTML5
+  - CSS3 + Bootstrap 5
+  - JavaScript
 
-**Please** read the user guide for a better explanation of how CI4 works!
+- **Backend**
+  - PHP (CodeIgniter 4)
 
-## Repository Management
+- **Base de datos**
+  - 
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+- **Otras herramientas**
+  - Google Fonts
+  - Git & GitHub
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+---
 
-## Contributing
+## ✨ Funcionalidades Implementadas
 
-We welcome contributions from the community.
+- Página principal con diseño responsivo
+- Formulario de contacto
+- Sistema de navegación modular
+- Diseño centrado en la experiencia del usuario
+---
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+## 📷 Capturas
 
-## Server Requirements
+*Agregár capturas de pantalla*
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+---
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## 🔧 En desarrollo...
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+- Integración con base de datos real (MySQL)
+- Sección de productos con carrito de compras
+- Registro y login de usuarios
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+---
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## 🚀 Cómo correr el proyecto
+
+1. Cloná el repositorio:
+git clone https://github.com/ByWildFrank/TallerWEBPAGE.git
+
+2. Asegurate de tener instalado XAMPP o similar, y clonal el proyecto en la carpeta `htdocs`.
+
+3. Configurá las rutas del controlador y vistas en CodeIgniter.
+
+4. Abrí el navegador en `http://localhost/PROYECTO-FRANCO-VARELA/public/`
+
+---
+
+## 📫 Contacto
+
+Si querés más información o tenés alguna duda, podés completar el formulario de contacto en el sitio o escribirnos directamente.
+
+---
+
+¡Gracias por visitar nuestro proyecto! 🌱
