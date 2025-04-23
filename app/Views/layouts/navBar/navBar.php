@@ -22,19 +22,19 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 m-2">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link" aria-current="page" href="<?= base_url('principal')?>">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('quienesSomos')?>">Quiénes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Comercialización</a>
+            <a class="nav-link" href="<?= base_url('comercializacion')?>">Comercialización</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Productos</a>
+            <a class="nav-link" href="<?= base_url('contacto')?>">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
+            <a class="nav-link" href="<?= base_url('terminosCondiciones')?>">Términos & Condiciones</a>
           </li>
         </ul>
       </div>

@@ -33,7 +33,7 @@
     display: inline-block;
     width: 120px; /* Ajustá el tamaño que quieras */
     height: 50px;
-    background-image: url('./MarcaPNGreducida.png');
+    background-image: url('../public/MarcaPNGreducida.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
