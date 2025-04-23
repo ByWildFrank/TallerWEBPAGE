@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BEAN</title>
-    <link rel="stylesheet" href="/PROYECTO-FRANCO-VARELA/assets/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-
-
-
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+        rel="stylesheet">
     <style>
-    <?php include 'principal.css';?>
+        <?php include 'principal.css'; ?>
     </style>
-    
 
 </head>
 
@@ -32,22 +31,17 @@
             <p>Es el momento que te regalás.</p>
             <p class="bold">BEAN. Café de especialidad, para rituales con sentido.</p>
         </div>
-
         <div class="ilustracion2">
-            <img src="https://images.unsplash.com/photo-1582768772255-7fb8066357ce?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-            style="max-width: 100%; height: auto;">
+            <img src="https://images.unsplash.com/photo-1582768772255-7fb8066357ce?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                style="max-width: 100%; height: auto;">
         </div>
-
-
-        
-        
     </div>
 
 
-    
+
     <div class="mapaMundial">
         <img src="../public/mapaMundial169-Photoroom.png" style="max-width: 100%; height: auto; align-items: center">
- 
+
     </div>
 
     <div class="pie-foto">
@@ -57,6 +51,7 @@
     </div>
     <?= view('layouts/footer/footer') ?>
 
-    <script src="/PROYECTO-FRANCO-VARELA/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+
+</html>

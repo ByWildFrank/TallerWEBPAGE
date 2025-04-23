@@ -3,7 +3,7 @@
 </style>
 
 
-<nav class="navbar navbar-expand-md fixed-top mb-4">
+<nav class="navbar navbar-expand-md fixed-top">
   <div class="container">
     <!-- Boton hamburguesa -->
     <button class="navbar-toggler border-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -11,7 +11,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand logo-img" href="#">BEAN</a>
+    <a class="navbar-brand" href="<?= base_url('principal') ?>">
+      <img src="../public/MarcaPNGreducida.png" alt="BEAN_logo">
+    </a>
 
     <!-- Menu Offcanvas -->
     <div class="offcanvas offcanvas-start" id="offcanvasNavbar">
@@ -20,21 +22,21 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 m-2">
+        <ul class="navbar-nav justify-content-end flex-grow-1">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="<?= base_url('principal')?>">Inicio</a>
+            <a class="nav-link" href="<?= base_url('principal') ?>">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('quienesSomos')?>">Quiénes Somos</a>
+            <a class="nav-link" href="<?= base_url('quienesSomos') ?>">Quiénes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('comercializacion')?>">Comercialización</a>
+            <a class="nav-link" href="<?= base_url('comercializacion') ?>">Comercialización</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('contacto')?>">Contacto</a>
+            <a class="nav-link" href="<?= base_url('contacto') ?>">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('terminosCondiciones')?>">Términos & Condiciones</a>
+            <a class="nav-link" href="<?= base_url('terminosCondiciones') ?>">Términos y Condiciones</a>
           </li>
         </ul>
       </div>

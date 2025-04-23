@@ -1,11 +1,8 @@
 .navbar {
     position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
+    z-index: 5;
     background-color: #f4f1ec;
-    height: 60px; /* altura del navbar */
-    overflow: hidden; /* evita que el logo más grande lo expanda */
+    max-height: fit-content;
 }
 
 .navbar a {
@@ -13,35 +10,42 @@
     transition: transform 0.3s ease;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     transform: scale(1.05);
 }
 
-/* img más grande pero con navbar "estatico" */
 .navbar-brand img {
-    height: 50px;      
-    margin-top: 0px;     /*imagen centrada */
-    object-fit: contain;
-    transition: transform 0.3s ease;
+    max-height: 50px;
+    margin: 15px;
+    padding: 5px;
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .navbar-brand img {
+        max-height: 40px;
+    }
+}
+
+@media (max-width: 812px) {
+    .container {
+        padding: 5px !important;
+    }
 }
 
 /* Efecto suave al pasar el mouse */
 .navbar-brand img:hover {
     transform: scale(1.05);
 }
-.logo-img {
-    display: inline-block;
-    width: 120px; /* Ajustá el tamaño que quieras */
-    height: 50px;
-    background-image: url('../public/MarcaPNGreducida.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: -9999px; /* oculta el texto si pusiste "CVA" */
-}
+
 h5 {
     font-family: 'Playfair Display', serif;
 }
+
 a {
     font-family: 'Playfair Display', serif;
 }

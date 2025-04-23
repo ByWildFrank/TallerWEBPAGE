@@ -45,47 +45,8 @@
             </div>
         </form>
     </div><!-- // End #container -->
-    <div id="form_alert" class="alert d-none mt-3" role="alert"></div>
 
     <?= view('layouts/footer/footer') ?>
-
-    <script>
-    document.getElementById("contact_form").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const data = {
-            name: document.getElementById("name_input").value,
-            email: document.getElementById("email_input").value,
-            telephone: document.getElementById("telephone_input").value,
-            message: document.getElementById("message_input").value,
-            contact_preference: document.getElementById("contact_pref_input").value
-        };
-
-        fetch("https://script.google.com/macros/s/AKfycbygjuTHXpljWPHAe8bcCrvCXLo_IUX7x-Ws045pnarHEBVayA-ECrfohv_PeOWqQE47Ng/exec", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(res => res.json())
-        .then(response => {
-            mostrarAlerta("¡Mensaje enviado con éxito!", "success");
-            document.getElementById("contact_form").reset();
-        })
-        .catch(err => {
-            mostrarAlerta("Ocurrió un error al enviar el mensaje. Por favor, intentá nuevamente.", "danger");
-            console.error(err);
-        });
-    });
-
-    function mostrarAlerta(mensaje, tipo) {
-        const alertBox = document.getElementById("form_alert");
-        alertBox.textContent = mensaje;
-        alertBox.className = `alert alert-${tipo} mt-3`;
-    }
-</script>
-
 
 </body>
 </html>

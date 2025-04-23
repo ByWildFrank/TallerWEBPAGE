@@ -16,7 +16,13 @@
 <body>    
     <?= view('layouts/navBar/navBar') ?>
     
+    <h1 class="mt-5">espacio</h1>
+    <h1 class="mt-5">espacio</h1>
+    <h1 class="mt-5">espacio</h1>
+    <h1 class="mt-5">espacio</h1>
+    <h1>Somos la emptresa de cafés más grande do mundo</h1>
     <p> Esto es quienes somos</p>
 
+    <?= view('layouts/footer/footer') ?>
 </body>
 </html> 
