@@ -2,7 +2,7 @@
     position: sticky; /* ← Esto hace la magia */
     top: 0; /* ← Se queda pegada al tope */
     z-index: 5;
-    background-color: #f4f1ec;
+    background-color: #f4f0e5;
     max-height: fit-content;
 }
 
