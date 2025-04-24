@@ -6,3 +6,20 @@ html, body {
     background-color: #f4f1ec;
     overflow-x: hidden;
 }
+
+p{
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin: 5px;
+
+}
+@media (max-width: 768px) {
+    .picture{
+        margin: 10px;
+        max-width: 200px;
+    }
+    p{
+        margin: 20px;
+    }
+
+}

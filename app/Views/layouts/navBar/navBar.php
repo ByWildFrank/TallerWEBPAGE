@@ -3,7 +3,7 @@
 </style>
 
 
-<nav class="navbar navbar-expand-md fixed-top">
+<nav class="navbar navbar-expand-md">
   <div class="container">
     <!-- Boton hamburguesa -->
     <button class="navbar-toggler border-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -12,7 +12,7 @@
     </button>
 
     <a class="navbar-brand" href="<?= base_url('principal') ?>">
-      <img src="../public/MarcaPNGreducida.png" alt="BEAN_logo">
+      <img src="../assets/img/MarcaPNGreducida.png" alt="BEAN_logo">
     </a>
 
     <!-- Menu Offcanvas -->

@@ -1,9 +1,11 @@
 .navbar {
-    position: fixed;
+    position: sticky; /* ← Esto hace la magia */
+    top: 0; /* ← Se queda pegada al tope */
     z-index: 5;
     background-color: #f4f1ec;
     max-height: fit-content;
 }
+
 
 .navbar a {
     color: black;
