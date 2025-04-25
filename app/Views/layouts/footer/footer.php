@@ -22,23 +22,22 @@
       <div class="footer-column">
         <h3>Clientes</h3>
         <ul class="footer-links">
-          <li><a href="#">Contacto</a></li>
-          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="<?= base_url('contacto') ?>">Contacto</a></li>
         </ul>
       </div>
 
       <div class="footer-column">
         <h3>Nuestra Empresa</h3>
         <ul class="footer-links">
-          <li><a href="#">Quiénes somos</a></li>
-          <li><a href="#">Catálogo Completo</a></li>
+          <li><a href="<?= base_url('quienesSomos') ?>">Quiénes somos</a></li>
+          <li><a href="<?= base_url('comercializacion') ?>">Comercializacion</a></li>
         </ul>
       </div>
 
       <div class="footer-column">
         <h3>Más información</h3>
         <ul class="footer-links">
-          <li><a href="#">Términos &amp; Condiciones</a></li>
+          <li><a href="<?= base_url('terminosCondiciones') ?>">Términos &amp; Condiciones</a></li>
         </ul>
       </div>
 

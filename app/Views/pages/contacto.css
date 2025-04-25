@@ -40,12 +40,12 @@ textarea {
 #container {
   border: solid 3px #474544;
   max-width: 768px;
-  margin: 100px auto;
+  margin: 50px auto;
   position: relative;
 }
 
 form {
-  padding: 37.5px;
+  padding: 37px;
   margin: 50px 0;
   font-family: "Playfair Display", serif;
 }
@@ -62,8 +62,8 @@ h1 {
 
 .underline {
   border-bottom: solid 2px #474544;
-  margin: -0.512em auto;
-  width: 80px;
+  margin: auto;
+  max-width: 85%;
 }
 
 .icon_wrapper {
@@ -76,7 +76,6 @@ h1 {
   fill: #474544;
   height: 50px;
   margin: 0 auto;
-  width: 50px;
 }
 
 .email {
@@ -85,7 +84,7 @@ h1 {
 }
 
 input[type="text"],
-[type="email"],
+input[type="email"],
 select,
 textarea {
   background: none;
@@ -122,16 +121,16 @@ textarea:focus {
   float: none;
 }
 
-.name {
+.text {
   float: left;
   width: 45%;
 }
 
 select {
-  background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png")
-    no-repeat right;
+  background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png") no-repeat right;
   outline: none;
   -moz-appearance: none;
+  appearance: none;
   -webkit-appearance: none;
 }
 
@@ -196,7 +195,7 @@ textarea {
   color: #f2f3eb;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   #container {
     margin: 5px auto;
     margin-top: 75px;
@@ -204,7 +203,7 @@ textarea {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   h1 {
     font-size: 26px;
   }
@@ -218,7 +217,7 @@ textarea {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media (max-width: 420px) {
   h1 {
     font-size: 18px;
   }
@@ -238,4 +237,23 @@ textarea {
   textarea {
     font-size: 0.875em;
   }
+}
+
+/* Estilo para el select de preferencia de contacto */
+#contact_pref_input {
+  background-color: transparent;  /* Mantiene el fondo transparente */
+  padding: 5px;
+  border-bottom: solid 2px #474544;  /* Mantiene solo el borde inferior como el resto de campos */
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #474544;
+  cursor: pointer;  /* Cambia el cursor a pointer en hover */
+  
+}
+/* Ajuste al contenedor para darle más espacio */
+.contact_pref {
+  margin-bottom: 30px;
+  width: 100%;
 }
