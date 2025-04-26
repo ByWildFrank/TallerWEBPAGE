@@ -20,7 +20,7 @@
 
 <body>
     <?= view('layouts/navBar/navBar') ?>
-    <section class="comercializacion container py-5">
+    <section class="comercializacion container p-5 my-5">
         <h1 class="mb-4">Comercialización</h1>
 
         <p class="intro">

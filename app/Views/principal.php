@@ -29,11 +29,10 @@
             <p>Cada taza guarda un instante de pausa, aroma y propósito.</p>
             <p>Porque lo especial no es solo el café…</p>
             <p>Es el momento que te regalás.</p>
-            <p class="bold">BEAN. Café de especialidad, para rituales con sentido.</p>
+            <p class="bold">BEAN Café de especialidad, para rituales con sentido.</p>
         </div>
         <div class="ilustracion2">
-            <img src="https://images.unsplash.com/photo-1582768772255-7fb8066357ce?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                style="max-width: 100%; height: auto;">
+            <img src="https://images.unsplash.com/photo-1582768772255-7fb8066357ce?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
         </div>
     </div>
 
@@ -41,10 +40,9 @@
 
     <div class="mapaMundial">
         <img src="../assets/img/mapaMundial169-Photoroom.png" style="max-width: 100%; height: auto; align-items: center">
-
     </div>
 
-    <div class="pie-foto">
+    <div class="pie-foto mb-5">
         <p>CONOCÉ EL MUNDO</p>
         <p>DEL CAFÉ, EXPLORALO</p>
         <p>TAZA POR TAZA</p>

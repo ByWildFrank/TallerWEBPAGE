@@ -47,11 +47,14 @@ h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   margin-bottom: 0px;
   margin-top: 40px;
+  color: #f5f0e6 !important;  /* hay que ver que está pisando a todo en el hero*/
 }
 
-h4 {
+/* fijaque que onda que le paso a esto*/
+
+h2 {
   font-size: 1.4rem;
-  color: #e0dcd2;
+  color: #e0dcd2 !important;
   margin-bottom: 10px;
   margin-top: 40px;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
@@ -61,9 +64,9 @@ h4 {
   margin-top: auto;
   padding: 0.75rem 2rem;
   font-size: 1.2rem;
-  border: 2px solid #3F4E4F;
-  background-color: #3F4E4F;
-  color: #fff;
+  border: 2px solid #3F4E4F!important;
+  background-color: #3F4E4F!important;
+  color: #fff!important;
   text-decoration: none; /* sin comillas acá */
   transition: all 0.3s ease;
   font-family: 'Playfair Display', serif;

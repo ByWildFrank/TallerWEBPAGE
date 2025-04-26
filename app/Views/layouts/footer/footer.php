@@ -1,24 +1,28 @@
+<!-- Modificación para footer.php -->
 <style>
-    <?php include 'footer.css'; ?>
+  <?php include 'footer.css'; ?>
 </style>
 
+<!-- Asegúrate de incluir los archivos CSS y JS de Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Incluir nuestro archivo de alertas personalizado -->
+<script src="<?= base_url('js/alert.js') ?>"></script>
 
 <footer class="footer">
   <div class="container">
-
     <!-- CTA Box -->
     <div class="box">
       <div class="box-content">
         <h2>Visita nuestro catálogo completo</h2>
-        <h3>Vamo!</h3>
+        <h3>Vamos!</h3>
       </div>
-      <a href="#" class="btn">Ver catálogo</a>
+      <a href="#" class="btn" id="btnVerCatalogo">Ver catálogo</a>
     </div>
 
     <!-- Footer Columns -->
     <div class="footer-content">
-
       <div class="footer-column">
         <h3>Clientes</h3>
         <ul class="footer-links">
@@ -53,11 +57,10 @@
 
       <div class="footer-column brand">
         <a class="footer-brand" href="<?= base_url('principal') ?>">
-        <img src="../assets/img/MarcaPNGreducida.png" alt="BEAN_logo">
+          <img src="../assets/img/MarcaPNGreducida.png" alt="BEAN_logo">
         </a>
         <p class="copyright">© 2025</p>
       </div>
-
     </div>
   </div>
 </footer>
