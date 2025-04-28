@@ -31,11 +31,25 @@
     .navbar-brand img {
         max-height: 40px;
     }
+    .navbar-nav .nav-link {
+        font-size: 0.9em; /* Reducimos aún más */
+        padding-left: 0.5rem; /* Ajustar el padding si es necesario */
+        padding-right: 0.5rem;
+    }
 }
 
 @media (max-width: 812px) {
     .container {
         padding: 5px !important;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1em; /* Reducimos el tamaño de la fuente */
+    }
+    .navbar-nav .nav-item .nav-link {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
 
@@ -50,4 +64,8 @@ h5 {
 
 a {
     font-family: 'Playfair Display', serif;
+}
+.navbar-nav .nav-item .nav-link {
+    padding-left: 0.75rem; /* Ajustar el padding izquierdo */
+    padding-right: 0.75rem; /* Ajustar el padding derecho */
 }

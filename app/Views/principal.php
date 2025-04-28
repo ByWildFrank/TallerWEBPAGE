@@ -47,9 +47,15 @@
         <p>DEL CAFÉ, EXPLORALO</p>
         <p>TAZA POR TAZA</p>
     </div>
-    <?= view('layouts/footer/footer') ?>
 
+
+    <?= view('layouts/editorsChoice/editorsChoice') ?>
+
+    <?= view('layouts/footer/footer') ?>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/editorsChoice.js"></script>
+
+
 </body>
 
 </html>

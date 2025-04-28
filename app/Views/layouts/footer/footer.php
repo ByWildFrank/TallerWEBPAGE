@@ -11,12 +11,12 @@
 <script src="<?= base_url('js/alert.js') ?>"></script>
 
 <footer class="footer">
-  <div class="container">
+  <div class="footer-container">
     <!-- CTA Box -->
     <div class="box">
       <div class="box-content">
         <h2>Visita nuestro catálogo completo</h2>
-        <h3>Vamos!</h3>
+        <h3>¡Vamos!</h3>
       </div>
       <a href="#" class="btn" id="btnVerCatalogo">Ver catálogo</a>
     </div>
@@ -34,7 +34,7 @@
         <h3>Nuestra Empresa</h3>
         <ul class="footer-links">
           <li><a href="<?= base_url('quienesSomos') ?>">Quiénes somos</a></li>
-          <li><a href="<?= base_url('comercializacion') ?>">Comercializacion</a></li>
+          <li><a href="<?= base_url('comercializacion') ?>">Comercialización</a></li>
         </ul>
       </div>
 
