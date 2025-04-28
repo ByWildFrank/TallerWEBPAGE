@@ -11,11 +11,14 @@
     <style>
         <?php include 'contacto.css'; ?>
     </style>
+    <?= load_alert_assets() ?>
 </head>
 
 <body>
 
     <?= view('layouts/navBar/navBar') ?>
+    <?= show_alert('Work in progress', 'Funcionalidad en contrucción!', 'warning', 'Entendido') ?>
+
 
     <div id="container" class="p-4">
         <h1>&bull; Sigamos en contacto &bull;</h1>
@@ -47,7 +50,7 @@
             </div>
 
             <div class="submit">
-                <input type="submit" value="Enviar mensaje" id="form_button" />
+                <input class="alert-button" type="submit" value="Enviar mensaje" id="form_button" />
             </div>
         </form>
     </div>

@@ -3,7 +3,7 @@
 </style>
 
 
-<nav class="navbar navbar-expand-md">
+<nav class="navbar navbar-expand-xl">
   <div class="container">
     <!-- Boton hamburguesa -->
     <button class="navbar-toggler border-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"

@@ -57,3 +57,13 @@
   color: inherit;
   margin-bottom: 0.5rem;
 }
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* espacio entre el icono y el título */
+  margin-bottom: 1rem;
+}
+
+.icon-title i {
+  margin-bottom: 0; /* quitamos margen inferior del ícono */
+}

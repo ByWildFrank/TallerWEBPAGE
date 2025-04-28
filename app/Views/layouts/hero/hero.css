@@ -1,8 +1,6 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Montserrat', sans-serif;
   background-color: #f4f1ec;
 }
 
@@ -14,7 +12,7 @@ body {
   background-position: center;
 }
 
-.mask {
+.hero-section .mask {
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   height: 100%;
@@ -23,66 +21,71 @@ body {
   left: 0;
 }
 
-.hero-content {
+.hero-section .hero-content {
   position: relative;
   z-index: 2;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centra texto verticalmente */
-  align-items: center;     /* centra texto horizontalmente */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 2rem;
 }
 
-.text-container {
+.hero-section .text-container {
   margin-bottom: auto;
   margin-top: auto;
 }
 
-h1 {
+.hero-section h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3.2rem;
   color: #f5f0e6;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   margin-bottom: 0px;
   margin-top: 40px;
-  color: #f5f0e6 !important;  /* hay que ver que está pisando a todo en el hero*/
 }
 
-/* fijaque que onda que le paso a esto*/
-
-h2 {
+.hero-section h2 {
   font-size: 1.4rem;
   font-family: 'Playfair Display', serif;
-  color: #e0dcd2 !important;
+  color: #e0dcd2;
   margin-bottom: 10px;
   margin-top: 40px;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
-.btn {
+.hero-section .btn {
   margin-top: auto;
   padding: 0.75rem 2rem;
   font-size: 1.2rem;
-  border: 2px solid #3F4E4F!important;
-  background-color: #3F4E4F!important;
-  color: #fff!important;
-  text-decoration: none; /* sin comillas acá */
+  border: 2px solid #3F4E4F;
+  background-color: #3F4E4F;
+  color: #fff;
+  text-decoration: none;
   transition: all 0.3s ease;
   font-family: 'Playfair Display', serif;
   border-radius: 10px;
   margin-bottom: 100px;
 }
 
-.btn:hover {
+.hero-section .btn:hover {
   background-color: #fff;
   color: #3F4E4F;
   border-color: #3F4E4F;
 }
 
-.hero-content .btn{
+.hero-section .hero-content .btn {
   border-radius: 10px;
   margin-bottom: 120px;
   font-family: 'Playfair Display', serif;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    /* Para móviles: ocupar toda la pantalla menos el navBar */
+    min-height: calc(100vh - 106px); /* Asumiendo que tu navbar mide aprox 70px */
+    background-position: center center;
+  }
 }

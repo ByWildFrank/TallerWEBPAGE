@@ -50,11 +50,9 @@
 
 
     <?= view('layouts/editorsChoice/editorsChoice') ?>
-
     <?= view('layouts/footer/footer') ?>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/editorsChoice.js"></script>
-
 
 </body>
 
