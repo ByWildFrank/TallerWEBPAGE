@@ -69,3 +69,9 @@ a {
     padding-left: 0.75rem; /* Ajustar el padding izquierdo */
     padding-right: 0.75rem; /* Ajustar el padding derecho */
 }
+.offcanvas-body{
+    background-color: #f4f0e5;
+}
+.offcanvas-header {
+    background-color: #f4f0e5;
+}
