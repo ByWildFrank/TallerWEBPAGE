@@ -21,6 +21,22 @@
     <?= view('layouts/navBar/navBar') ?>
     <?= view('layouts/hero/hero') ?>
 
+    <ul class="navbar-nav ms-auto">
+        <?php if (session()->get('isLoggedIn')): ?>
+            <li class="nav-item">
+                <span class="nav-link">Hola, <?= session()->get('nombre') ?></span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('auth/logout') ?>">Cerrar sesión</a>
+            </li>
+        <?php else: ?>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('auth/login') ?>">Iniciar sesión</a>
+            </li>
+        <?php endif; ?>
+    </ul>
+
+
     <div class="general-container">
         <div class="text-container">
             <p class="italic">En BEAN creemos que el café es más que una bebida.</p>
@@ -46,6 +62,10 @@
         <p>CONOCÉ EL MUNDO</p>
         <p>DEL CAFÉ, EXPLORALO</p>
         <p>TAZA POR TAZA</p>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="<?= base_url('catalogo') ?>" class="btn btn-dark btn-lg">Ver Catálogo Completo</a>
     </div>
 
 
