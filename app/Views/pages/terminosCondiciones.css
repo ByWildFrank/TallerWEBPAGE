@@ -67,3 +67,6 @@
 .icon-title i {
   margin-bottom: 0; /* quitamos margen inferior del ícono */
 }
+p{
+  font-family: 'Playfair Display', serif;
+}

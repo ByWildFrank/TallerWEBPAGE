@@ -12,29 +12,29 @@
 
 <div class="carousel-container">
   <div class="carousel-slide">
-    <img src="../assets/img/cafetailandia.png" alt="Colombia Supremo">
+    <img src="../assets/img/cafetailandia.png" alt="Tailandia del norte">
+    <div class="info">
+      <h2>Tailandia del norte</h2>
+      <p>Notas de almendra tostada y vainilla, sabor dulce y redondo.</p>
+      <p><strong>Origen:</strong> Tailandia</p>
+      <button class="alert-button">Más información</button>
+    </div>
+  </div>
+  <div class="carousel-slide">
+    <img src="../assets/img/cafetanzania.png" alt="Tanzania Silvestre">
+    <div class="info">
+      <h2>Tanzania Silvestre</h2>
+      <p>Notas de mora y té negro, sabor intenso y aromático.</p>
+      <p><strong>Origen:</strong> Tanzania</p>
+      <button class="alert-button">Más información</button>
+    </div>
+  </div>
+  <div class="carousel-slide">
+    <img src="../assets/img/cafecolombia.png" alt="Colombia Supremo">
     <div class="info">
       <h2>Colombia Supremo</h2>
-      <p>Notas suaves de caramelo y nuez.</p>
-      <p><strong>Origen:</strong> Colombia</p>
-      <button class="alert-button">Más información</button>
-    </div>
-  </div>
-  <div class="carousel-slide">
-    <img src="../assets/img/cafetanzania.png" alt="Ethiopian Yirgacheffe">
-    <div class="info">
-      <h2>Ethiopian Yirgacheffe</h2>
-      <p>Toques florales y cítricos, cuerpo ligero.</p>
-      <p><strong>Origen:</strong> Etiopía</p>
-      <button class="alert-button">Más información</button>
-    </div>
-  </div>
-  <div class="carousel-slide">
-    <img src="../assets/img/cafecolombia.png" alt="Brazil Santos">
-    <div class="info">
-      <h2>Brazil Santos</h2>
       <p>Notas de chocolate y nuez, sabor dulce.</p>
-      <p><strong>Origen:</strong> Brasil</p>
+      <p><strong>Origen:</strong> Colombia</p>
       <button class="alert-button">Más información</button>
     </div>
   </div>
