@@ -64,15 +64,15 @@
         <p>TAZA POR TAZA</p>
     </div>
 
-    <div class="text-center mt-4">
-        <a href="<?= base_url('catalogo') ?>" class="btn btn-dark btn-lg">Ver Catálogo Completo</a>
+    <div class="boton-catalogo-completo">
+        <a href="<?= base_url('catalogo') ?>">Ver Catálogo Completo </a> 
     </div>
 
 
     <?= view('layouts/editorsChoice/editorsChoice') ?>
     <?= view('layouts/footer/footer') ?>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/editorsChoice.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/editorsChoice.js"></script>
 
 </body>
 

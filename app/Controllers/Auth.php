@@ -2,45 +2,40 @@
 
 namespace App\Controllers;
 
-use App\Models\UserModel;  // Asegurate de tener este modelo
+use App\Models\UsuarioModel;
+use CodeIgniter\Controller;
 
 class Auth extends BaseController
 {
     public function login()
     {
-        helper(['form']);
+        return view('./auth/login');
+    }
 
-        // Si se envió el formulario (método POST)
-        if ($this->request->getMethod() === 'post') {
-            $email = $this->request->getPost('email');
-            $password = $this->request->getPost('password');
+    public function loginPost()
+    {
+        $session = session();
+        $model = new UsuarioModel();
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+        $user = $model->where('email', $email)->first();
 
-            $usuarioModel = new UserModel();
-            $usuario = $usuarioModel->where('email', $email)->first();
-
-            if ($usuario && password_verify($password, $usuario['password'])) {
-                // Guardar datos en sesión
-                session()->set([
-                    'id' => $usuario['id'],
-                    'nombre' => $usuario['nombre'],
-                    'email' => $usuario['email'],
-                    'rol' => $usuario['rol'],
-                    'isLoggedIn' => true
-                ]);
-                return redirect()->to(base_url('principal'));
-            } else {
-                session()->setFlashdata('error', 'Usuario o contraseña incorrectos');
-                return redirect()->back();
-            }
+        if ($user && password_verify($password, $user['password'])) {
+            $session->set([
+                'usuario_id' => $user['id'],
+                'usuario_nombre' => $user['nombre'],
+                'usuario_rol' => $user['rol'],
+                'logged_in' => true
+            ]);
+            return redirect()->to(base_url('principal'));
+        } else {
+            return redirect()->back()->with('error', 'Credenciales inválidas');
         }
-
-        // Si no es POST, solo mostramos la vista
-        return view('pages/login');
     }
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(base_url('auth/login'));
+        return redirect()->to('/login');
     }
 }

@@ -13,6 +13,17 @@ $routes->get('comercializacion', 'Comercializacion::index');
 $routes->get('terminosCondiciones', 'TerminosCondiciones::index');
 $routes->get('catalogo', 'ProductController::index');
 $routes->get('product/detalle/(:num)', 'ProductController::detalle/$1');
+
+$routes->get('login', 'Auth::login');
+$routes->post('auth/loginPost', 'Auth::loginPost');
+$routes->get('logout', 'Auth::logout');
 $routes->get('auth/login', 'Auth::login');
-$routes->post('auth/login', 'Auth::login');
-$routes->get('auth/logout', 'Auth::logout');
+
+
+
+/*
+$routes->get('login', 'Auth::login');
+$routes->post('auth/loginPost', 'Auth::loginPost');
+$routes->get('logout', 'Auth::logout');
+*/
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);

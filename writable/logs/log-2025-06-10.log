@@ -4,3 +4,180 @@ DEBUG - 2025-06-10 19:11:55 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-10 19:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-10 19:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-10 19:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:17:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:20:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:25:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:28:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 19:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:45:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:48:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:54:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-10 20:54:00 --> Error: Class "App\Models\UsuarioModel" not found
+[Method: POST, Route: auth/loginPost]
+in APPPATH\Controllers\Auth.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->loginPost()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-10 20:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 20:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 21:05:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 21:05:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 21:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 21:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 21:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 21:06:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-10 23:25:53 --> ErrorException: include(navbar.css): Failed to open stream: No such file or directory
+[Method: GET, Route: catalogo]
+in APPPATH\Views\productos\catalogo.php on line 10.
+ 1 APPPATH\Views\productos\catalogo.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(navbar.css): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php', 10)
+ 2 APPPATH\Views\productos\catalogo.php(10): include()
+ 3 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
+ 6 APPPATH\Controllers\ProductController.php(15): view('productos/catalogo', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 23:26:13 --> ErrorException: include(navbar.css): Failed to open stream: No such file or directory
+[Method: GET, Route: catalogo]
+in APPPATH\Views\productos\catalogo.php on line 10.
+ 1 APPPATH\Views\productos\catalogo.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(navbar.css): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php', 10)
+ 2 APPPATH\Views\productos\catalogo.php(10): include()
+ 3 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
+ 6 APPPATH\Controllers\ProductController.php(15): view('productos/catalogo', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 23:27:42 --> ErrorException: include(layouts/navBar/navBar.css): Failed to open stream: No such file or directory
+[Method: GET, Route: catalogo]
+in APPPATH\Views\productos\catalogo.php on line 10.
+ 1 APPPATH\Views\productos\catalogo.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(layouts/navBar/navBar.css): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php', 10)
+ 2 APPPATH\Views\productos\catalogo.php(10): include()
+ 3 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
+ 6 APPPATH\Controllers\ProductController.php(15): view('productos/catalogo', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 23:27:43 --> ErrorException: include(layouts/navBar/navBar.css): Failed to open stream: No such file or directory
+[Method: GET, Route: catalogo]
+in APPPATH\Views\productos\catalogo.php on line 10.
+ 1 APPPATH\Views\productos\catalogo.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(layouts/navBar/navBar.css): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php', 10)
+ 2 APPPATH\Views\productos\catalogo.php(10): include()
+ 3 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
+ 6 APPPATH\Controllers\ProductController.php(15): view('productos/catalogo', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 23:29:05 --> ParseError: syntax error, unexpected token "/"
+[Method: GET, Route: catalogo]
+in APPPATH\Views\productos\catalogo.php on line 10.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
+ 3 APPPATH\Controllers\ProductController.php(15): view('productos/catalogo', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 23:29:52 --> ParseError: syntax error, unexpected token "."
+[Method: GET, Route: catalogo]
+in APPPATH\Views\productos\catalogo.php on line 10.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
+ 3 APPPATH\Controllers\ProductController.php(15): view('productos/catalogo', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 23:30:26 --> ErrorException: include(): http:// wrapper is disabled in the server configuration by allow_url_include=0
+[Method: GET, Route: catalogo]
+in APPPATH\Views\productos\catalogo.php on line 10.
+ 1 APPPATH\Views\productos\catalogo.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(): http:// wrapper is disabled in the server configuration by allow_url_include=0', 'C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php', 10)
+ 2 APPPATH\Views\productos\catalogo.php(10): include()
+ 3 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\productos\\catalogo.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
+ 6 APPPATH\Controllers\ProductController.php(15): view('productos/catalogo', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 23:37:12 --> ParseError: syntax error, unexpected token "<"
+[Method: GET, Route: catalogo]
+in APPPATH\Views\productos\catalogo.php on line 12.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('productos/catalogo', [], true)
+ 3 APPPATH\Controllers\ProductController.php(15): view('productos/catalogo', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-10 23:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 23:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

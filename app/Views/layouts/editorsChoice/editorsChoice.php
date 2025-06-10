@@ -12,7 +12,7 @@
 
 <div class="carousel-container">
   <div class="carousel-slide">
-    <img src="<?= base_url('./assets/img/Products/cafetailandia.png') ?>" alt="Tailandia del norte">
+    <img src="<?= base_url('../assets/img/Products/cafetailandia.png') ?>" alt="Tailandia del norte">
     <div class="info">
       <h2>Tailandia del norte</h2>
       <p>Notas de almendra tostada y vainilla, sabor dulce y redondo.</p>
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="carousel-slide">
-    <img src="<?= base_url('./assets/img/Products/cafetanzania.png') ?>" alt="Tanzanie Silvestre">
+    <img src="<?= base_url('../assets/img/Products/cafetanzania.png') ?>" alt="Tanzanie Silvestre">
     <div class="info">
       <h2>Tanzania Silvestre</h2>
       <p>Notas de mora y té negro, sabor intenso y aromático.</p>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="carousel-slide">
-    <img src="<?= base_url('./assets/img/Products/cafecolombia.png') ?>" alt="Colombia Supremo">
+    <img src="<?= base_url('../assets/img/Products/cafecolombia.png') ?>" alt="Colombia Supremo">
     <div class="info">
       <h2>Colombia Supremo</h2>
       <p>Notas de chocolate y nuez, sabor dulce.</p>
