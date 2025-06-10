@@ -61,7 +61,7 @@
 
       <div class="footer-column brand">
         <a class="footer-brand" href="<?= base_url('principal') ?>">
-          <img src="../assets/img/MarcaPNGreducida.png" alt="BEAN_logo">
+          <img src="<?= base_url('assets/img/MarcaPNGreducida.png') ?>" alt= "BEAN_logo">
         </a>
         <p class="copyright">© 2025</p>
       </div>

@@ -6,19 +6,7 @@
     <title>Catálogo de Productos</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <style>
-        .producto {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin: 10px;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .producto img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+        <?php include 'catalogo.css'; ?>
     </style>
 </head>
 
@@ -30,7 +18,7 @@
         <div class="row">
             <?php foreach ($productos as $producto): ?>
                 <div class="card m-2" style="width: 18rem;">
-                    <img src="<?= base_url('Products/' . $producto['imagen']) ?>" class="card-img-top" alt="<?= esc($producto['nombre']) ?>">
+                    <img src="<?= base_url('assets/img/Products/' . $producto['imagen']) ?>" class="card-img-top" alt="<?= esc($producto['nombre']) ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?= esc($producto['nombre']) ?></h5>
                         <p class="card-text">$<?= esc($producto['precio']) ?></p>

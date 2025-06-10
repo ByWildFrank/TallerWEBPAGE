@@ -18,7 +18,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="<?= base_url('Products/' . $producto['imagen']) ?>" alt="<?= esc($producto['nombre']) ?>" class="img-fluid">
+                <img src="<?= base_url('assets/img/Products/' . $producto['imagen']) ?>" alt="<?= esc($producto['nombre']) ?>" class="img-fluid">
             </div>
             <div class="col-md-6">
                 <h2><?= esc($producto['nombre']) ?></h2>

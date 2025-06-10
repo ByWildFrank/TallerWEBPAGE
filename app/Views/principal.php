@@ -55,7 +55,7 @@
 
 
     <div class="mapaMundial">
-        <img src="../assets/img/mapaMundial169-Photoroom.png" style="max-width: 100%; height: auto; align-items: center">
+        <img src="<?= base_url('assets/img/mapaMundial169-Photoroom.png') ?>" style="max-width: 100%; height: auto; align-items: center">
     </div>
 
     <div class="pie-foto mb-5">

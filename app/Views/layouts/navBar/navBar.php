@@ -12,7 +12,7 @@
     </button>
 
     <a class="navbar-brand" href="<?= base_url('principal') ?>">
-      <img src="../assets/img/MarcaPNGreducida.png" alt="BEAN_logo">
+      <img src="<?= base_url('assets/img/MarcaPNGreducida.png') ?>" alt= "BEAN_logo">
     </a>
 
     <!-- Menu Offcanvas -->
