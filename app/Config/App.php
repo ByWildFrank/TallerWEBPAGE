@@ -201,5 +201,6 @@ class App extends BaseConfig
     public bool $CSPEnabled = false;
 
     public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
-    public $sessionSavePath = 'C:/xampp/htdocs/PROYECTO-FRANCO-VARELA/writable/session';
+    public $sessionSavePath = WRITEPATH . 'session';
+
 }

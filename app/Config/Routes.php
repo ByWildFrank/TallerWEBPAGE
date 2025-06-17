@@ -35,3 +35,6 @@ $routes->get('orden/completada/(:num)', 'OrdenController::completada/$1');
 
 //User
 $routes->get('mi-cuenta', 'UserController::miCuenta', ['filter' => 'auth']);
+
+$routes->get('register', 'Auth::register');
+$routes->post('auth/registerPost', 'Auth::registerPost');

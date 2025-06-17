@@ -64,4 +64,45 @@ class Auth extends BaseController
         
         return redirect()->to(base_url('login'));
     }
+
+    // NUEVO: Mostrar vista de registro
+    public function register()
+    {
+        return view('auth/register');
+    }
+    // NUEVO: Procesar datos del formulario
+    public function registerPost()
+    {
+        $validation = \Config\Services::validation();
+
+        $validation->setRules([
+            'nombre'    => 'required',
+            'apellido'  => 'required',
+            'email'     => 'required|valid_email|is_unique[usuario.email]',
+            'password'  => 'required|min_length[6]',
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', implode('<br>', $validation->getErrors()));
+        }
+
+        $userModel = new UsuarioModel();
+
+        $userData = [
+            'nombre'     => $this->request->getPost('nombre'),
+            'apellido'   => $this->request->getPost('apellido'),
+            'email'      => $this->request->getPost('email'),
+            'password'   => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'direccion'  => $this->request->getPost('direccion'),
+            'telefono'   => $this->request->getPost('telefono'),
+            'rol'        => 'usuario', // por defecto
+            'created_at' => date('Y-m-d H:i:s')
+        ];
+
+        $userModel->save($userData);
+
+        return redirect()->to('/login')->with('success', 'Registro exitoso. Ahora podés iniciar sesión.');
+    }
 }
