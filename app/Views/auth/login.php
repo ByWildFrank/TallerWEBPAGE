@@ -1,22 +1,49 @@
-<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login - BEAN</title>
-    <Style>
-        <? include 'login.css'; ?>
-    </Style>
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
+    <style>
+        <?php include 'login.css'; ?>
+    </style>
 </head>
 <body>
-    <h2>Iniciar sesión</h2>
-    <?php if(session()->getFlashdata('error')): ?>
-        <p style="color:red"><?= session()->getFlashdata('error') ?></p>
-    <?php endif; ?>
-    <form method="post" action="<?= base_url('auth/loginPost') ?>">
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br>
-        <label>Contraseña:</label><br>
-        <input type="password" name="password" required><br><br>
-        <button type="submit">Entrar</button>
-    </form>
+    <div class="login-container">
+        <h2 class="login-title">Iniciar Sesión</h2>
+        
+        
+        
+        <form method="post" action="<?= base_url('auth/loginPost') ?>">
+            <?= csrf_field() ?>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" 
+                       id="email" 
+                       name="email" 
+                       class="form-control" 
+                       required 
+                       value="<?= old('email') ?>"
+                       placeholder="tu@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Contraseña:</label>
+                <input type="password" 
+                       id="password" 
+                       name="password" 
+                       class="form-control" 
+                       required
+                       placeholder="Tu contraseña">
+            </div>
+            
+            <button type="submit" class="btn btn-login">Entrar</button>
+        </form>
+        
+        <div class="back-link">
+            <a href="<?= base_url('/') ?>">← Volver al inicio</a>
+        </div>
+    </div>
 </body>
 </html>

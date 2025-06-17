@@ -12,7 +12,7 @@
     </button>
 
     <a class="navbar-brand" href="<?= base_url('principal') ?>">
-      <img src="<?= base_url('assets/img/MarcaPNGreducida.png') ?>" alt= "BEAN_logo">
+      <img src="<?= base_url('assets/img/MarcaPNGreducida.png') ?>" alt="BEAN_logo">
     </a>
 
     <!-- Menu Offcanvas -->
@@ -39,6 +39,34 @@
             <a class="nav-link" href="<?= base_url('terminosCondiciones') ?>">Términos y Condiciones</a>
           </li>
         </ul>
+
+        <!-- Menú de usuario -->
+        <ul class="navbar-nav ms-auto">
+          <?php if (session()->get('isLoggedIn')): ?>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                <i class="fas fa-user"></i> <?= esc(session()->get('nombre')) ?>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="<?= base_url('mi-cuenta') ?>">Mi Cuenta</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('carrito') ?>">Mi Carrito</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('mis-pedidos') ?>">Mis Pedidos</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="<?= base_url('logout') ?>">Cerrar Sesión</a></li>
+              </ul>
+            </li>
+          <?php else: ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url('login') ?>">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url('register') ?>">Registrarse</a>
+            </li>
+          <?php endif; ?>
+        </ul>
+
       </div>
     </div>
   </div>

@@ -20,10 +20,18 @@ $routes->get('logout', 'Auth::logout');
 $routes->get('auth/login', 'Auth::login');
 
 
-
-/*
-$routes->get('login', 'Auth::login');
-$routes->post('auth/loginPost', 'Auth::loginPost');
-$routes->get('logout', 'Auth::logout');
-*/
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
+
+// Carrito
+$routes->get('carrito', 'CarritoController::ver');
+$routes->get('carrito/ver', 'CarritoController::ver');
+$routes->get('carrito/agregar/(:num)', 'CarritoController::agregar/$1');
+$routes->post('carrito/actualizar', 'CarritoController::actualizar');
+$routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1');
+
+// orden 
+$routes->get('orden/procesar', 'OrdenController::procesar');
+$routes->get('orden/completada/(:num)', 'OrdenController::completada/$1');
+
+//User
+$routes->get('mi-cuenta', 'UserController::miCuenta', ['filter' => 'auth']);

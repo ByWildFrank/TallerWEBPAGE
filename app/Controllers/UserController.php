@@ -1,41 +1,31 @@
 <?php
+
 namespace App\Controllers;
 
-use App\Models\UserModel;
-use CodeIgniter\Controller;
+use App\Controllers\BaseController;
+use App\Models\UsuarioModel;
 
-class Auth extends Controller
+class UserController extends BaseController
 {
-    public function login()
-    {
-        helper(['form']);
-        if ($this->request->getMethod() == 'post') {
-            $email = $this->request->getPost('email');
-            $password = $this->request->getPost('password');
+   public function miCuenta()
+{
+    // DEBUG: ver qué hay en sesión (solo para probar, sacalo luego)
+    dd(session()->get());
 
-            $model = new UserModel();
-            $user = $model->where('email', $email)->first();
-
-            if ($user && password_verify($password, $user['password'])) {
-                session()->set([
-                    'user_id' => $user['id'],
-                    'user_name' => $user['nombre'],
-                    'user_email' => $user['email'],
-                    'isLoggedIn' => true,
-                    'user_rol' => $user['rol'],
-                ]);
-                return redirect()->to(base_url('principal'));
-            } else {
-                return redirect()->back()->with('error', 'Email o contraseña incorrecta.');
-            }
-        }
-
-        return view('pages/login');
+    if (!session()->get('isLoggedIn')) {
+        return redirect()->to('/login')->with('error', 'Debés iniciar sesión para ver esta sección.');
     }
 
-    public function logout()
-    {
-        session()->destroy();
-        return redirect()->to(base_url('auth/login'));
+    $userId = session()->get('id');
+    $userModel = new UsuarioModel();
+    $usuario = $userModel->find($userId);
+
+    if (!$usuario) {
+        return redirect()->to('/')->with('error', 'Usuario no encontrado.');
     }
+
+    // Ya con el usuario cargado, muestro la vista con los datos
+    return view('usuario/mi_cuenta', ['usuario' => $usuario]);
+}
+
 }

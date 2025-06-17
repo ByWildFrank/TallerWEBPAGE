@@ -50,7 +50,8 @@ body {
   display: flex;
   height: 100%;
   margin: 0 auto;
-  img{
+
+  img {
     max-width: 80%;
   }
 }
@@ -68,7 +69,8 @@ body {
 
   .ilustracion2 {
     height: auto;
-    img{
+
+    img {
       max-width: 300px;
     }
   }
@@ -76,6 +78,7 @@ body {
   .ilustracion2 img {
     height: auto;
   }
+
   .pie-foto p {
     font-size: 20px !important;
   }
@@ -102,44 +105,118 @@ body {
   font-style: italic;
 }
 
-.mapaMundial{
+.mapaMundial {
   max-width: 1300px;
   margin: 0 auto;
 }
 
 .boton-catalogo-completo {
-    display: flex;
-    justify-content: center;
-    margin: 50px 0;
-    padding-top: -20px;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  padding-top: -20px;
 }
 
 .boton-catalogo-completo a {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #6B4E31; /* Marrón café, inspirado en los productos como el café */
-    color: #FFFFFF; /* Texto blanco para contraste */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #6B4E31;
+  /* Marrón café, inspirado en los productos como el café */
+  color: #FFFFFF;
+  /* Texto blanco para contraste */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .boton-catalogo-completo a:hover {
-    background-color: #8B6F47; /* Tono más claro al pasar el ratón */
-    transform: translateY(-2px); /* Efecto de elevación */
+  background-color: #8B6F47;
+  /* Tono más claro al pasar el ratón */
+  transform: translateY(-2px);
+  /* Efecto de elevación */
 }
 
 .boton-catalogo-completo a:active {
-    transform: translateY(0); /* Regresa a su posición al hacer clic */
+  transform: translateY(0);
+  /* Regresa a su posición al hacer clic */
 }
 
 /* Responsividad */
 @media (max-width: 576px) {
-    .boton-catalogo-completo a {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
+  .boton-catalogo-completo a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+
+/* Estilos para el banner de usuario */
+.user-welcome-banner {
+  background: linear-gradient(135deg, #6f4e37 0%, #8b5a3c 100%);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.user-welcome-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.welcome-text {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.welcome-text .user-name {
+  font-weight: 700;
+  color: #f8d7a3;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.logout-icon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .user-welcome-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .welcome-text {
+    font-size: 1rem;
+  }
 }

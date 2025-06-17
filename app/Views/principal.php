@@ -14,27 +14,38 @@
     <style>
         <?php include 'principal.css'; ?>
     </style>
-
 </head>
 
 <body>
     <?= view('layouts/navBar/navBar') ?>
+
+    <!-- Banner de Bienvenida para Usuario Logueado -->
+    <?php if (session()->get('isLoggedIn')): ?>
+        <div class="user-welcome-banner">
+            <div class="user-welcome-content">
+                <p class="welcome-text">
+                    ¡Bienvenido/a, <span class="user-name"><?= esc(session()->get('nombre')) ?></span>!
+                    Esperamos que disfrutes de nuestros cafés de especialidad.
+                </p>
+                <a href="<?= base_url('logout') ?>" class="logout-btn">
+                    <svg class="logout-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
+                    </svg>
+                    Cerrar Sesión
+                </a>
+            </div>
+        </div>
+    <?php endif; ?>
+
+
     <?= view('layouts/hero/hero') ?>
 
-    <ul class="navbar-nav ms-auto">
-        <?php if (session()->get('isLoggedIn')): ?>
-            <li class="nav-item">
-                <span class="nav-link">Hola, <?= session()->get('nombre') ?></span>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/logout') ?>">Cerrar sesión</a>
-            </li>
-        <?php else: ?>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('auth/login') ?>">Iniciar sesión</a>
-            </li>
-        <?php endif; ?>
-    </ul>
+    <!-- DEBUG INFO - REMOVER EN PRODUCCIÓN -->
+
+    <div style="background: yellow; padding: 10px;">
+        <strong>Session Debug:</strong><br>
+        <?php var_dump(session()->get()); ?>
+    </div>
 
 
     <div class="general-container">
@@ -52,8 +63,6 @@
         </div>
     </div>
 
-
-
     <div class="mapaMundial">
         <img src="<?= base_url('assets/img/mapaMundial169-Photoroom.png') ?>" style="max-width: 100%; height: auto; align-items: center">
     </div>
@@ -65,14 +74,15 @@
     </div>
 
     <div class="boton-catalogo-completo">
-        <a href="<?= base_url('catalogo') ?>">Ver Catálogo Completo </a> 
+        <a href="<?= base_url('catalogo') ?>">Ver Catálogo Completo </a>
     </div>
-
 
     <?= view('layouts/editorsChoice/editorsChoice') ?>
     <?= view('layouts/footer/footer') ?>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/editorsChoice.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 
