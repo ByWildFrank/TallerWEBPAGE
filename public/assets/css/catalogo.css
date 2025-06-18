@@ -1,59 +1,90 @@
+.catalogo-seccion {
+  padding: 2rem;
+  background-color: #f7f7f7;
+}
 
-    body {
-        background-color: #f8f9fa;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+.catalogo-titulo {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
 
-    h2 {
-        font-weight: 700;
-        color: #343a40;
-    }
+.catalogo-grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
 
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.tarjeta-producto {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
 
-    .card {
-        border: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        transition: transform 0.2s, box-shadow 0.2s;
-        border-radius: 15px;
-    }
+.tarjeta-producto:hover {
+  transform: scale(1.02);
+}
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
+.tarjeta-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* Evita distorsión y asegura que no se corte */
+  background-color: #fafafa;
+}
 
-    .card-img-top {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        height: 200px;
-        object-fit: cover;
-    }
+.tarjeta-cuerpo {
+  padding: 1rem;
+  text-align: center;
+  flex-grow: 1;
+}
 
-    .card-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #212529;
-    }
+.tarjeta-titulo {
+  font-size: 1.2rem;
+  color: #222;
+  margin: 0.5rem 0;
+}
 
-    .card-text {
-        font-size: 1.1rem;
-        color: #28a745;
-        font-weight: 500;
-    }
+.tarjeta-precio {
+  color: #2a9d8f;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
 
-    .card-body .btn {
-        margin: 4px 0;
-        width: 100%;
-    }
+.tarjeta-botones {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    @media (min-width: 768px) {
-        .card {
-            margin: 1rem;
-        }
-    }
+.boton-ver,
+.boton-agregar {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
 
+.boton-ver {
+  background-color: #264653;
+}
+
+.boton-ver:hover {
+  background-color: #1f3a3f;
+}
+
+.boton-agregar {
+  background-color: #2a9d8f;
+}
+
+.boton-agregar:hover {
+  background-color: #21867a;
+}

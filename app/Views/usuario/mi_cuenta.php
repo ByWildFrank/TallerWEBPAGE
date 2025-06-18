@@ -1,109 +1,42 @@
-<!DOCTYPE html>
-<html lang="es">
+<?= $this->extend('layouts/layoutBase') ?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Mi Cuenta - BEAN</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-    <style>
-        body {
-            background-color: #f4f4f4;
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+<?php $noHero = true; $noEditorsChoice = true; ?>
 
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            z-index: 1000;
-        }
+<?= $this->section('styles') ?>
+<link rel="stylesheet" href="<?= base_url('assets/css/mi-cuenta.css') ?>">
+<?= $this->endSection() ?>
 
-        .navbar-brand, .nav-link {
-            color: #333 !important;
-        }
+<?= $this->section('content') ?>
+<div class="content container py-5">
+    <h2 class="mb-4">Mi Cuenta</h2>
 
-        .navbar-brand:hover, .nav-link:hover {
-            color: #007bff !important;
-        }
+    <div class="info-item mb-3">
+        <label class="fw-bold">Nombre:</label>
+        <p><?= esc($usuario['nombre']) ?></p>
+    </div>
 
-        .content {
-            max-width: 1200px;
-            margin: 80px auto 20px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+    <div class="info-item mb-3">
+        <label class="fw-bold">Apellido:</label>
+        <p><?= esc($usuario['apellido']) ?></p>
+    </div>
 
-        h2, h3 {
-            margin-bottom: 20px;
-        }
+    <div class="info-item mb-3">
+        <label class="fw-bold">Email:</label>
+        <p><?= esc($usuario['email']) ?></p>
+    </div>
 
-        .info-item {
-            margin-bottom: 15px;
-        }
+    <div class="info-item mb-5">
+        <label class="fw-bold">Rol:</label>
+        <p><?= esc($usuario['rol']) ?></p>
+    </div>
 
-        .info-item label {
-            font-weight: bold;
-        }
+    <h3>Historial de Órdenes</h3>
 
-        .info-item p {
-            margin: 0;
-            color: #333;
-        }
-
-        .btn-volver {
-            margin-top: 20px;
-        }
-
-        .orden-table {
-            margin-top: 30px;
-        }
-
-        .detalle-table {
-            margin-left: 20px;
-            font-size: 0.9em;
-        }
-
-        .factura-info {
-            margin-top: 10px;
-            font-style: italic;
-        }
-    </style>
-</head>
-
-<body>
-    <?= view('layouts/navBar/navBar') ?>
-    <div class="content">
-        <h2>Mi Cuenta</h2>
-
-        <div class="info-item">
-            <label>Nombre:</label>
-            <p><?= esc($usuario['nombre']) ?></p>
-        </div>
-
-        <div class="info-item">
-            <label>Apellido:</label>
-            <p><?= esc($usuario['apellido']) ?></p>
-        </div>
-
-        <div class="info-item">
-            <label>Email:</label>
-            <p><?= esc($usuario['email']) ?></p>
-        </div>
-
-        <div class="info-item">
-            <label>Rol:</label>
-            <p><?= esc($usuario['rol']) ?></p>
-        </div>
-
-        <h3>Historial de Órdenes</h3>
-        <?php if (empty($ordenes)): ?>
-            <p>No tienes órdenes registradas.</p>
-        <?php else: ?>
-            <table class="table orden-table">
+    <?php if (empty($ordenes)): ?>
+        <p class="text-muted">No tienes órdenes registradas.</p>
+    <?php else: ?>
+        <div class="table-responsive">
+            <table class="table table-striped orden-table">
                 <thead>
                     <tr>
                         <th>Número de Orden</th>
@@ -116,8 +49,7 @@
                 </thead>
                 <tbody>
                     <?php foreach ($ordenes as $orden): 
-                        // Intentamos obtener la factura desde los datos pasados o usamos un valor por defecto
-                        $factura = isset($facturas[$orden['id']]) ? $facturas[$orden['id']] : null;
+                        $factura = $facturas[$orden['id']] ?? null;
                     ?>
                         <tr>
                             <td>#<?= esc($orden['id']) ?></td>
@@ -129,11 +61,11 @@
                                     Número: <?= esc($factura['numero_factura']) ?><br>
                                     Estado: <?= esc($factura['estado']) ?>
                                 <?php else: ?>
-                                    No disponible
+                                    <span class="text-muted">No disponible</span>
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <table class="table detalle-table">
+                                <table class="table table-sm table-bordered detalle-table">
                                     <thead>
                                         <tr>
                                             <th>Producto</th>
@@ -158,14 +90,9 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        <?php endif; ?>
+        </div>
+    <?php endif; ?>
 
-        <a href="<?= base_url('/') ?>" class="btn btn-secondary btn-volver">← Volver al inicio</a>
-    </div>
-    <?= view('layouts/footer/footer') ?>
-    <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/editorsChoice.js') ?>"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+    <a href="<?= base_url('/') ?>" class="btn btn-secondary mt-4">← Volver al inicio</a>
+</div>
+<?= $this->endSection() ?>

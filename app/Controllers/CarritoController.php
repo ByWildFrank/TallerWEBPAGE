@@ -50,9 +50,16 @@ class CarritoController extends BaseController
 
     public function ver()
     {
-        $usuario_id = session()->get('id');
-        $data['items'] = $this->carritoModel->obtenerItemsPorUsuario($usuario_id);
+       $usuario_id = session()->get('id');
+
+        $data = [
+            'items' => $this->carritoModel->obtenerItemsPorUsuario($usuario_id),
+            'noHero' => true,
+            'noEditorsChoice' => true
+        ];
+
         return view('carrito/ver', $data);
+
     }
 
     public function eliminar($id_item)

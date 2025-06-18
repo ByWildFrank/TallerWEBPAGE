@@ -1,0 +1,154 @@
+/* === Reset y base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f5f3f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Contenedor principal === */
+.content {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+/* === Títulos === */
+.content h2,
+.content h3 {
+  font-family: 'Playfair Display', serif;
+  color: #4B2E83;
+  margin-bottom: 1.5rem;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.content h3 {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+/* === Información del usuario === */
+.info-item {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.info-item label {
+  font-weight: 700;
+  width: 120px;
+}
+
+.info-item p {
+  margin: 0;
+  color: #555;
+}
+
+/* === Tabla de órdenes === */
+.orden-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.orden-table th,
+.orden-table td {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.orden-table th {
+  background-color: #f4f0e5;
+  color: #333;
+  font-weight: 600;
+}
+
+.orden-table tr:nth-child(even) {
+  background-color: #fbfbfb;
+}
+
+.factura-info {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* === Tabla interna de detalles === */
+.detalle-table {
+  width: 100%;
+  margin-top: 0.5rem;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.detalle-table th,
+.detalle-table td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.detalle-table th {
+  background-color: #f6f6f6;
+  font-weight: 500;
+}
+
+/* === Texto de estado vacío === */
+.text-muted {
+  color: #888;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* === Botón volver === */
+.btn-secondary {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #4B2E83;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #362165;
+}
+
+/* === Responsivo === */
+@media (max-width: 768px) {
+  .info-item label {
+    width: 100%;
+  }
+
+  .orden-table,
+  .detalle-table {
+    font-size: 0.8rem;
+  }
+
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}

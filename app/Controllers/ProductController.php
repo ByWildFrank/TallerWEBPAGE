@@ -17,8 +17,8 @@ public function index()
         ->findAll();
 
     // Indicadores para ocultar secciones del layout
-    $data['ocultarHero'] = true;
-    $data['ocultarEditorsChoice'] = true;
+    $data['noEditorsChoice'] = true;
+    $data['noHero'] = true;
 
     return view('productos/catalogo', $data);
 }

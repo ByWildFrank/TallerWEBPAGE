@@ -3,14 +3,9 @@
 <?= $this->extend('layouts/layoutBase') ?>
 
 <?= $this->section('styles') ?>
-<style>
-    <?php include 'principal.css'; ?>
-</style>
+<link rel="stylesheet" href="<?= base_url('assets/css/principal.css') ?>">
 <?= $this->endSection() ?>
 
-<?= $this->section('hero') ?>
-    <?= view('layouts/hero/hero') ?>
-<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 

@@ -53,7 +53,9 @@ class UserController extends BaseController
         $data = [
             'usuario' => $usuario,
             'ordenes' => $ordenes,
-            'facturas' => $facturas // Pasamos las facturas como un arreglo
+            'facturas' => $facturas, // Pasamos las facturas como un arreglo
+            'noHero' => true,
+            'noEditorsChoice' => true
         ];
 
         return view('usuario/mi_cuenta', $data);

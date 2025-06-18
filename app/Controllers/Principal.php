@@ -15,7 +15,9 @@ class Principal extends BaseController
         $data = [
             'isLoggedIn' => $session->get('isLoggedIn') ?? false,
             'userName' => $session->get('nombre') ?? '',
-            'userEmail' => $session->get('email') ?? ''
+            'userEmail' => $session->get('email') ?? '',
+            'noHero' => false,
+            'noEditorsChoice' => false
         ];
 
         return view('principal.php', $data);

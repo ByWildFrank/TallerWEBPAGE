@@ -137,7 +137,9 @@ class OrdenController extends BaseController
         return view('orden/completar', [
             'orden' => $orden,
             'factura' => $factura,
-            'detalles' => $detalles
+            'detalles' => $detalles,
+            'noHero' => true,
+            'noEditorsChoice' => true
         ]);
     }
 

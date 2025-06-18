@@ -1,77 +1,184 @@
- /* Reset y tipografía base */
- html, body { margin: 0; padding: 0; height: 100%; font-family: "Open Sans", sans-serif; background-color: #f4f1ec; overflow-x: hidden; }
- #quienes-somos p { font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.2rem; }
+* {
+  box-sizing: border-box;
+}
 
- /* Sección "Quiénes Somos" */
- #quienes-somos {
-   background-color: #f4f0e5;
-   padding: 4rem 0;
- }
- #quienes-somos .row-texto {
-   max-width: 950px;
-   margin: 0 auto 3rem;
-   text-align: center;
- }
- #quienes-somos h2 {
-   font-family: 'Playfair Display', serif;
-   font-size: 3.5rem;
-   margin-bottom: 1rem;
-   position: relative;
-   display: inline-block;
-   margin: 0 auto 1rem;   /* margen automático para centrar el bloque */
-   text-align: center;  
- }
- #quienes-somos h2::after {
-   content: "";
-   width: 50%;
-   height: 3px;
-   background-color: #2f3e23;
-   position: absolute;
-   bottom: -8px;
-   left: 0;
-   border-radius: 2px;
-   left: 50%;                   /* posiciónalo en el centro del h2 */
-   transform: translateX(-50%);
- }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f9fa;
+}
 
- /* Tarjetas de perfil */
- .fotos-perfil {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-   gap: 2rem;
-   max-width: 800px;
-   margin: 0 auto;
- }
- .perfil-card {
-   background: #fff;
-   padding: 1.5rem;
-   border-radius: 1rem;
-   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-   text-align: center;
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
- }
- .perfil-card img {
-   width: 150px;
-   height: 150px;
-   object-fit: cover;
-   border-radius: 50%;
-   margin-bottom: 1rem;
- }
- .perfil-card:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
- }
- .perfil-card h5 {
-   margin-bottom: 0.25rem;
-   font-family: 'Playfair Display', serif;
- }
- .perfil-card .role {
-   font-size: 0.9rem;
-   color: #666;
- }
+.quienes-somos {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
 
- /* Responsive */
- @media (max-width: 768px) {
-   #quienes-somos { padding: 2rem 0; }
-   .fotos-perfil { gap: 1.5rem; }
- }
+.quienes-somos h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.quienes-somos h2::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  background-color: #3a773c;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.row-texto {
+  max-width: 950px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.row-texto p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.row-texto p strong {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.row-texto p em {
+  font-style: italic;
+  color: #3a773c;
+}
+
+.fotos-perfil {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Aumentado de 280px a 320px */
+  gap: 2.5rem; /* Aumentado de 2rem para más espacio */
+  max-width: 1100px; /* Aumentado de 1000px para aprovechar más espacio */
+  margin: 0 auto;
+}
+
+.perfil-card {
+  background: #fff;
+  padding: 2.5rem; /* Aumentado de 2rem para más espacio interno */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.perfil-img {
+  width: 200px; /* Aumentado de 180px */
+  height: 200px; /* Aumentado de 180px */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #3a773c;
+  margin-bottom: 1rem;
+}
+
+.perfil-card h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; /* Aumentado de 1.6rem */
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.perfil-card .role {
+  font-size: 1.1rem; /* Aumentado de 1rem */
+  color: #2c3e50;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .quienes-somos {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .quienes-somos h2 {
+    font-size: 2.25rem;
+  }
+
+  .row-texto p {
+    font-size: 1rem;
+  }
+
+  .fotos-perfil {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Aumentado de 240px */
+    gap: 2rem;
+  }
+
+  .perfil-img {
+    width: 160px; /* Ajustado para pantallas medianas */
+    height: 160px;
+  }
+
+  .perfil-card {
+    padding: 2rem;
+  }
+
+  .perfil-card h5 {
+    font-size: 1.6rem;
+  }
+
+  .perfil-card .role {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quienes-somos {
+    padding: 1rem 0.5rem;
+  }
+
+  .quienes-somos h2 {
+    font-size: 2rem;
+  }
+
+  .row-texto p {
+    font-size: 0.95rem;
+  }
+
+  .fotos-perfil {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Aumentado de 200px */
+    gap: 1.5rem;
+  }
+
+  .perfil-img {
+    width: 140px; /* Ajustado para móviles */
+    height: 140px;
+  }
+
+  .perfil-card {
+    padding: 1.5rem;
+  }
+
+  .perfil-card h5 {
+    font-size: 1.4rem;
+  }
+
+  .perfil-card .role {
+    font-size: 0.9rem;
+  }
+}

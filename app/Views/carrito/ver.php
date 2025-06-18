@@ -1,5 +1,10 @@
-<?= $this->include('layouts\navBar\navBar.php') ?>
+<?= $this->extend('layouts/layoutBase') ?>
 
+<?= $this->section('styles') ?>
+<link rel="stylesheet" href="<?= base_url('assets/css/ver.css') ?>">
+<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
 <section>
     <h2>Mi carrito</h2>
 
@@ -17,10 +22,12 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $total = 0;
+                <?php 
+                $total = 0;
                 foreach ($items as $item):
                     $subtotal = $item['precio'] * $item['cantidad'];
-                    $total += $subtotal; ?>
+                    $total += $subtotal; 
+                ?>
                     <tr>
                         <td><?= esc($item['nombre']) ?></td>
                         <td id="price-<?= $item['id'] ?>">$<?= number_format($item['precio'], 2) ?></td>
@@ -46,24 +53,23 @@
             <button type="submit" class="btn btn-success">Finalizar compra</button>
         </form>
     <?php endif; ?>
-
 </section>
-<?= $this->include('layouts\footer\footer.php') ?>
+<?= $this->endSection() ?>
 
+<?= $this->section('scripts') ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
         $.ajaxSetup({
             data: {
-                '<?php echo csrf_token(); ?>': '<?php echo csrf_hash(); ?>'
+                '<?= csrf_token() ?>': '<?= csrf_hash() ?>'
             }
         });
 
         window.decreaseQuantity = function(id) {
             var currentQuantity = parseInt($('#quantity-' + id).val());
             if (currentQuantity > 1) {
-                var newQuantity = currentQuantity - 1;
-                updateQuantity(id, newQuantity);
+                updateQuantity(id, currentQuantity - 1);
             } else {
                 alert('La cantidad mínima es 1');
             }
@@ -71,8 +77,7 @@
 
         window.increaseQuantity = function(id) {
             var currentQuantity = parseInt($('#quantity-' + id).val());
-            var newQuantity = currentQuantity + 1;
-            updateQuantity(id, newQuantity);
+            updateQuantity(id, currentQuantity + 1);
         };
 
         window.updateQuantity = function(id, quantity) {
@@ -85,6 +90,7 @@
                 total += parseFloat($(this).text().replace('$', ''));
             });
             $('#total-amount').text('$' + total.toFixed(2));
+
             $.ajax({
                 url: '<?= base_url('/carrito/actualizar') ?>',
                 type: 'POST',
@@ -92,8 +98,8 @@
                     id_item: id,
                     cantidad: quantity
                 },
-
             });
         };
     });
 </script>
+<?= $this->endSection() ?>

@@ -1,13 +1,4 @@
-<head>
-  <style>
-    <?php include 'footer.css'; ?>
-  </style>
-
-  <!-- Asegúrate de incluir los archivos CSS y JS de Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+<!-- app/Views/layouts/footer/footer.php -->
 
 <footer class="footer">
   <div class="footer-container">
@@ -17,10 +8,8 @@
         <h2>Visita nuestro catálogo completo</h2>
         <h3>¡Vamos!</h3>
       </div>
-      <button class="">
-        <a href="<?= base_url('catalogo') ?>">Ver Catálogo</a>
-      </button>
-    </div>
+        <a href="<?= base_url('catalogo') ?>" class="btn btn-footer">Ver Catálogo</a>
+      </div>
 
     <!-- Footer Columns -->
     <div class="footer-content">

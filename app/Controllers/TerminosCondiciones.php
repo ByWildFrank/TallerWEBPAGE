@@ -7,6 +7,9 @@ class TerminosCondiciones extends BaseController
 {
     public function index(): string
     {
-        return view('./pages/terminosCondiciones');
+        return view('./pages/terminosCondiciones', [
+            'noHero' => true,
+            'noEditorsChoice' => true
+        ]);
     }
 }
