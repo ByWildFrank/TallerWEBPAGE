@@ -18,12 +18,25 @@ class CarritoController extends BaseController
 
     public function agregar($producto_id)
     {
-        $usuario_id = session()->get('id'); // Asegurate que el usuario esté logueado
+        $usuario_id = session()->get('id');
+        if (!$usuario_id) {
+            return redirect()->to('/login')->with('error', 'Debes iniciar sesión');
+        }
+
+        $producto = $this->productoModel->find($producto_id);
+        if (!$producto) {
+            return redirect()->to('/catalogo')->with('error', 'Producto no encontrado');
+        }
 
         $item = $this->carritoModel->where(['usuario_id' => $usuario_id, 'producto_id' => $producto_id])->first();
+        $nueva_cantidad = ($item ? $item['cantidad'] + 1 : 1);
+
+        if ($nueva_cantidad > $producto['stock']) {
+            return redirect()->to('/catalogo')->with('error', 'Stock insuficiente para ' . $producto['nombre']);
+        }
 
         if ($item) {
-            $this->carritoModel->update($item['id'], ['cantidad' => $item['cantidad'] + 1]);
+            $this->carritoModel->update($item['id'], ['cantidad' => $nueva_cantidad]);
         } else {
             $this->carritoModel->insert([
                 'usuario_id' => $usuario_id,
@@ -32,7 +45,7 @@ class CarritoController extends BaseController
             ]);
         }
 
-        return redirect()->to('/carrito/ver');
+        return redirect()->to('/carrito/ver')->with('success', 'Producto agregado al carrito');
     }
 
     public function ver()
@@ -49,10 +62,14 @@ class CarritoController extends BaseController
     }
 
     public function actualizar()
-    {
-        $id_item = $this->request->getPost('id_item');
-        $cantidad = $this->request->getPost('cantidad');
-        $this->carritoModel->update($id_item, ['cantidad' => $cantidad]);
-        return redirect()->to('/carrito/ver');
+{
+    $id_item = $this->request->getPost('id_item');
+    $cantidad = $this->request->getPost('cantidad');
+    
+    if ($this->carritoModel->update($id_item, ['cantidad' => $cantidad])) {
+        return $this->response->setJSON(['success' => true]);
+    } else {
+        return $this->response->setJSON(['success' => false, 'error' => 'No se pudo actualizar la cantidad']);
     }
+}
 }

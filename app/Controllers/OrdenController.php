@@ -5,59 +5,149 @@ namespace App\Controllers;
 use App\Models\CarritoModel;
 use App\Models\OrdenModel;
 use App\Models\DetalleModel;
+use App\Models\ProductModel;
+use App\Models\FacturaModel;
 
 class OrdenController extends BaseController
 {
     protected $carritoModel;
     protected $ordenModel;
     protected $detalleModel;
+    protected $productModel;
+    protected $facturaModel;
+    protected $db;
 
     public function __construct()
     {
         $this->carritoModel = new CarritoModel();
         $this->ordenModel = new OrdenModel();
         $this->detalleModel = new DetalleModel();
+        $this->productModel = new ProductModel();
+        $this->facturaModel = new FacturaModel();
+        $this->db = \Config\Database::connect();
     }
 
     public function procesar()
     {
+        // Verificar si el usuario está autenticado
         $usuario_id = session()->get('id');
-        $items = $this->carritoModel->obtenerItemsPorUsuario($usuario_id);
+        if (!$usuario_id) {
+            return redirect()->to('/login')->with('error', 'Debes iniciar sesión para realizar una compra');
+        }
 
+        // Obtener ítems del carrito
+        $items = $this->carritoModel->obtenerItemsPorUsuario($usuario_id);
         if (empty($items)) {
             return redirect()->to('/carrito/ver')->with('error', 'No hay productos en el carrito');
         }
 
-        $total = 0;
-        foreach ($items as $item) {
-            $total += $item['precio'] * $item['cantidad'];
-        }
+        // Iniciar transacción
+        $this->db->transBegin();
 
-        $this->ordenModel->insert([
-            'usuario_id' => $usuario_id,
-            'fecha' => date('Y-m-d H:i:s'),
-            'total' => $total
-        ]);
+        try {
+            $total = 0;
+            $items_validos = [];
 
-        $orden_id = $this->ordenModel->getInsertID();
+            // Validar stock y calcular total
+            foreach ($items as $item) {
+                $producto = $this->productModel->find($item['producto_id']);
+                if (!$producto) {
+                    throw new \Exception("El producto con ID {$item['producto_id']} no existe");
+                }
 
-        foreach ($items as $item) {
-            $this->detalleModel->insert([
+                if ($item['cantidad'] > $producto['stock']) {
+                    throw new \Exception("Stock insuficiente para el producto: {$producto['nombre']}");
+                }
+
+                $subtotal = $producto['precio'] * $item['cantidad'];
+                $total += $subtotal;
+
+                $items_validos[] = [
+                    'producto_id' => $item['producto_id'],
+                    'cantidad' => $item['cantidad'],
+                    'precio_unitario' => $producto['precio'],
+                    'subtotal' => $subtotal
+                ];
+            }
+
+            // Crear orden
+            $orden_data = [
+                'usuario_id' => $usuario_id,
+                'total' => $total,
+                'estado' => 'pendiente',
+                'fecha_creacion' => date('Y-m-d H:i:s')
+            ];
+            $this->ordenModel->insert($orden_data);
+            $orden_id = $this->ordenModel->getInsertID();
+
+            // Insertar detalles de la orden y actualizar stock
+            foreach ($items_validos as $item) {
+                $detalle_data = [
+                    'orden_id' => $orden_id,
+                    'producto_id' => $item['producto_id'],
+                    'cantidad' => $item['cantidad'],
+                    'precio_unitario' => $item['precio_unitario'],
+                    'subtotal' => $item['subtotal']
+                ];
+                $this->detalleModel->insert($detalle_data);
+
+                $producto_actual = $this->productModel->find($item['producto_id']);
+                $this->productModel->update($item['producto_id'], [
+                    'stock' => $producto_actual['stock'] - $item['cantidad']
+                ]);
+            }
+
+            // Vaciar carrito
+            $this->carritoModel->eliminarPorUsuario($usuario_id);
+
+            // Crear factura
+            $factura_data = [
                 'orden_id' => $orden_id,
-                'producto_id ' => $item['producto_id '],
-                'cantidad' => $item['cantidad'],
-                'precio_unitario' => $item['precio']
-            ]);
+                'numero_factura' => 'FAC-' . date('Ymd-His'),
+                'fecha_emision' => date('Y-m-d H:i:s'),
+                'total' => $total,
+                'estado' => 'pendiente'
+            ];
+            $this->facturaModel->insert($factura_data);
+
+            // Confirmar transacción
+            $this->db->transCommit();
+
+            return redirect()->to('/orden/completar/' . $orden_id)->with('success', 'Compra iniciada con éxito. Revisa y finaliza.');
+        } catch (\Exception $e) {
+            $this->db->transRollback();
+            return redirect()->to('/carrito/ver')->with('error', $e->getMessage());
         }
-
-        // Vaciar carrito
-        $this->carritoModel->eliminarPorUsuario($usuario_id);
-
-        return redirect()->to('/orden/completada/' . $orden_id);
     }
 
-    public function completada($orden_id)
+    public function completar($orden_id)
     {
-        return view('orden/completada', ['orden_id' => $orden_id]);
+        $orden = $this->ordenModel->find($orden_id);
+        if (!$orden || $orden['usuario_id'] != session()->get('id')) {
+            return redirect()->to('/carrito/ver')->with('error', 'Orden no encontrada o no autorizada');
+        }
+
+        $factura = $this->facturaModel->where('orden_id', $orden_id)->first();
+        $detalles = $this->detalleModel->where('orden_id', $orden_id)->findAll();
+
+        return view('orden/completar', [
+            'orden' => $orden,
+            'factura' => $factura,
+            'detalles' => $detalles
+        ]);
+    }
+
+    public function finalizar($orden_id)
+    {
+        $orden = $this->ordenModel->find($orden_id);
+        if (!$orden || $orden['usuario_id'] != session()->get('id')) {
+            return redirect()->to('/mi-cuenta')->with('error', 'Orden no encontrada o no autorizada');
+        }
+
+        $this->ordenModel->update($orden_id, ['estado' => 'finalizada']);
+        $factura = $this->facturaModel->where('orden_id', $orden_id)->first();
+        $this->facturaModel->update($factura['id'], ['estado' => 'emitida']);
+
+        return redirect()->to('/mi-cuenta')->with('success', 'Orden finalizada con éxito');
     }
 }

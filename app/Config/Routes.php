@@ -31,8 +31,9 @@ $routes->post('carrito/actualizar', 'CarritoController::actualizar');
 $routes->get('carrito/eliminar/(:num)', 'CarritoController::eliminar/$1');
 
 // orden 
-$routes->get('orden/procesar', 'OrdenController::procesar');
-$routes->get('orden/completada/(:num)', 'OrdenController::completada/$1');
+$routes->post('/orden/procesar', 'OrdenController::procesar');
+$routes->get('/orden/completar/(:num)', 'OrdenController::completar/$1');
+$routes->get('/orden/finalizar/(:num)', 'OrdenController::finalizar/$1');
 
 //User
 $routes->get('mi-cuenta', 'UserController::miCuenta', ['filter' => 'auth']);

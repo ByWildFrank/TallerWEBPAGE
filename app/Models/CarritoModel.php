@@ -12,9 +12,9 @@ class CarritoModel extends Model
 
     public function obtenerItemsPorUsuario($usuario_id)
     {
-        return $this->select('itemcarrito.*, producto.nombre, producto.precio, producto.imagen')
+        return $this->select('itemcarrito.id, itemcarrito.producto_id, itemcarrito.cantidad, producto.nombre, producto.precio')
                     ->join('producto', 'producto.id = itemcarrito.producto_id')
-                    ->where('usuario_id', $usuario_id)
+                    ->where('itemcarrito.usuario_id', $usuario_id)
                     ->findAll();
     }
 
