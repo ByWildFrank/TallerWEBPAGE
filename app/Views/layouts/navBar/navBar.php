@@ -1,8 +1,3 @@
-<style>
-  <?php include 'navBar.css'; ?>
-</style>
-
-
 <nav class="navbar navbar-expand-xl">
   <div class="container">
     <!-- Boton hamburguesa -->
@@ -51,9 +46,7 @@
                 <li><a class="dropdown-item" href="<?= base_url('mi-cuenta') ?>">Mi Cuenta</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('carrito') ?>">Mi Carrito</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('mis-pedidos') ?>">Mis Pedidos</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="<?= base_url('logout') ?>">Cerrar Sesión</a></li>
               </ul>
             </li>

@@ -7,13 +7,23 @@ use CodeIgniter\Controller;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        $productModel = new ProductModel();
-        $data['productos'] = $productModel->findAll();
+public function index()
+{
+    $productModel = new ProductModel();
 
-        return view('productos/catalogo', $data);
-    }
+    $data['productos'] = $productModel
+        ->where('estado', 1)
+        // ->where('stock >', 0)
+        ->findAll();
+
+    // Indicadores para ocultar secciones del layout
+    $data['ocultarHero'] = true;
+    $data['ocultarEditorsChoice'] = true;
+
+    return view('productos/catalogo', $data);
+}
+
+
 
     public function detalle($id)
     {

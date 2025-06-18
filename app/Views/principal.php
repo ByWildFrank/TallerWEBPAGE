@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html>
+<!-- app/Views/principal.php -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>BEAN</title>
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
-        rel="stylesheet">
-    <style>
-        <?php include 'principal.css'; ?>
-    </style>
-</head>
+<?= $this->extend('layouts/layoutBase') ?>
 
-<body>
-    <?= view('layouts/navBar/navBar') ?>
+<?= $this->section('styles') ?>
+<style>
+    <?php include 'principal.css'; ?>
+</style>
+<?= $this->endSection() ?>
+
+<?= $this->section('hero') ?>
+    <?= view('layouts/hero/hero') ?>
+<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
 
     <!-- Banner de Bienvenida para Usuario Logueado -->
     <?php if (session()->get('isLoggedIn')): ?>
@@ -36,17 +31,7 @@
             </div>
         </div>
     <?php endif; ?>
-
-
-    <?= view('layouts/hero/hero') ?>
-
-    <!-- DEBUG INFO - REMOVER EN PRODUCCIÓN -->
-
-    <div style="background: yellow; padding: 10px;">
-        <strong>Session Debug:</strong><br>
-        <?php var_dump(session()->get()); ?>
-    </div>
-
+    
 
     <div class="general-container">
         <div class="text-container">
@@ -59,12 +44,12 @@
             <p class="bold">BEAN Café de especialidad, para rituales con sentido.</p>
         </div>
         <div class="ilustracion2">
-            <img src="https://images.unsplash.com/photo-1582768772255-7fb8066357ce?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <img src="https://images.unsplash.com/photo-1582768772255-7fb8066357ce?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ilustración café" />
         </div>
     </div>
 
     <div class="mapaMundial">
-        <img src="<?= base_url('assets/img/mapaMundial169-Photoroom.png') ?>" style="max-width: 100%; height: auto; align-items: center">
+        <img src="<?= base_url('assets/img/mapaMundial169-Photoroom.png') ?>" style="max-width: 100%; height: auto; align-items: center" alt="Mapa Mundial del café" />
     </div>
 
     <div class="pie-foto mb-5">
@@ -77,13 +62,9 @@
         <a href="<?= base_url('catalogo') ?>">Ver Catálogo Completo </a>
     </div>
 
-    <?= view('layouts/editorsChoice/editorsChoice') ?>
-    <?= view('layouts/footer/footer') ?>
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/editorsChoice.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<?= $this->endSection() ?>
 
 
-</body>
-
-</html>
+<?= $this->section('scripts') ?>
+    <script src="<?= base_url('assets/js/editorsChoice.js') ?>"></script>
+<?= $this->endSection() ?>
