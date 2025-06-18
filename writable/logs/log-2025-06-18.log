@@ -75,3 +75,87 @@ DEBUG - 2025-06-18 03:26:31 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-06-18 03:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-18 03:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-06-18 03:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:41:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:41:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 03:43:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/navBar.php"
+[Method: GET, Route: mi-cuenta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navBar.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/navBar', null, true)
+ 3 APPPATH\Views\usuario\mi_cuenta.php(2): CodeIgniter\View\View->include('layouts/navBar')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\usuario\\mi_cuenta.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('usuario/mi_cuenta', [], true)
+ 7 APPPATH\Controllers\UserController.php(25): view('usuario/mi_cuenta', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->miCuenta()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 03:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 03:43:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/navBar.php"
+[Method: GET, Route: mi-cuenta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navBar.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/navBar', null, true)
+ 3 APPPATH\Views\usuario\mi_cuenta.php(2): CodeIgniter\View\View->include('layouts/navBar')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\usuario\\mi_cuenta.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('usuario/mi_cuenta', [], true)
+ 7 APPPATH\Controllers\UserController.php(25): view('usuario/mi_cuenta', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->miCuenta()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 03:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:43:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 03:43:51 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/navBar.php"
+[Method: GET, Route: mi-cuenta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navBar.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/navBar', null, true)
+ 3 APPPATH\Views\usuario\mi_cuenta.php(2): CodeIgniter\View\View->include('layouts/navBar')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\usuario\\mi_cuenta.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('usuario/mi_cuenta', [], true)
+ 7 APPPATH\Controllers\UserController.php(25): view('usuario/mi_cuenta', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->miCuenta()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 03:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-18 03:51:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/navBar.php"
+[Method: GET, Route: mi-cuenta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navBar.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/navBar', null, true)
+ 3 APPPATH\Views\usuario\mi_cuenta.php(2): CodeIgniter\View\View->include('layouts/navBar')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\PROYECTO-FRANCO-VARELA\\app\\Views\\usuario\\mi_cuenta.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('usuario/mi_cuenta', [], true)
+ 7 APPPATH\Controllers\UserController.php(25): view('usuario/mi_cuenta', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->miCuenta()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-18 03:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-18 03:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

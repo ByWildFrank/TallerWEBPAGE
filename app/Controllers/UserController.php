@@ -7,10 +7,7 @@ use App\Models\UsuarioModel;
 
 class UserController extends BaseController
 {
-   public function miCuenta()
-{
-    // DEBUG: ver qué hay en sesión (solo para probar, sacalo luego)
-    dd(session()->get());
+   public function miCuenta(){
 
     if (!session()->get('isLoggedIn')) {
         return redirect()->to('/login')->with('error', 'Debés iniciar sesión para ver esta sección.');

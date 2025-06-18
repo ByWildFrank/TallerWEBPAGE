@@ -1,0 +1,77 @@
+.navbar {
+    position: sticky; /* ← Esto hace la magia */
+    top: 0; /* ← Se queda pegada al tope */
+    z-index: 5;
+    background-color: #f4f0e5;
+    max-height: fit-content;
+}
+
+
+.navbar a {
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    transform: scale(1.05);
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    margin: 15px;
+    padding: 5px;
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+    }
+
+    .navbar-brand img {
+        max-height: 40px !important;
+    }
+    .navbar-nav .nav-link {
+        font-size: 0.9em !important; /* Reducimos aún más */
+        padding-left: 0.5rem !important; /* Ajustar el padding si es necesario */
+        padding-right: 0.5rem !important;
+    }
+}
+
+@media (max-width: 812px) {
+    .container {
+        padding: 5px !important;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1em !important; /* Reducimos el tamaño de la fuente */
+    }
+    .navbar-nav .nav-item .nav-link {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+}
+
+/* Efecto suave al pasar el mouse */
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+h5 {
+    font-family: 'Playfair Display', serif !important;
+}
+
+a {
+    font-family: 'Playfair Display', serif !important;
+}
+.navbar-nav .nav-item .nav-link {
+    padding-left: 0.75rem !important; /* Ajustar el padding izquierdo */
+    padding-right: 0.75rem !important; /* Ajustar el padding derecho */
+}
+.offcanvas-body{
+    background-color: #f4f0e5;
+}
+.offcanvas-header {
+    background-color: #f4f0e5;
+}
