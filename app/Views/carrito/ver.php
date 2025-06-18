@@ -41,7 +41,10 @@
         </table>
         <h4>Total: <span id="total-amount">$<?= number_format($total, 2) ?></span></h4>
 
-        <a href="<?= base_url('/orden/procesar') ?>" class="btn btn-success">Finalizar compra</a>
+        <form action="<?= base_url('/orden/procesar') ?>" method="post">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
+            <button type="submit" class="btn btn-success">Finalizar compra</button>
+        </form>
     <?php endif; ?>
 
 </section>
@@ -89,7 +92,7 @@
                     id_item: id,
                     cantidad: quantity
                 },
-                
+
             });
         };
     });

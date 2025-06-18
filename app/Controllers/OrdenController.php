@@ -29,26 +29,22 @@ class OrdenController extends BaseController
 
     public function procesar()
     {
-        // Verificar si el usuario está autenticado
         $usuario_id = session()->get('id');
         if (!$usuario_id) {
             return redirect()->to('/login')->with('error', 'Debes iniciar sesión para realizar una compra');
         }
 
-        // Obtener ítems del carrito
         $items = $this->carritoModel->obtenerItemsPorUsuario($usuario_id);
         if (empty($items)) {
             return redirect()->to('/carrito/ver')->with('error', 'No hay productos en el carrito');
         }
 
-        // Iniciar transacción
         $this->db->transBegin();
 
         try {
             $total = 0;
             $items_validos = [];
 
-            // Validar stock y calcular total
             foreach ($items as $item) {
                 $producto = $this->productModel->find($item['producto_id']);
                 if (!$producto) {
@@ -70,7 +66,6 @@ class OrdenController extends BaseController
                 ];
             }
 
-            // Crear orden
             $orden_data = [
                 'usuario_id' => $usuario_id,
                 'total' => $total,
@@ -80,7 +75,6 @@ class OrdenController extends BaseController
             $this->ordenModel->insert($orden_data);
             $orden_id = $this->ordenModel->getInsertID();
 
-            // Insertar detalles de la orden y actualizar stock
             foreach ($items_validos as $item) {
                 $detalle_data = [
                     'orden_id' => $orden_id,
@@ -97,10 +91,8 @@ class OrdenController extends BaseController
                 ]);
             }
 
-            // Vaciar carrito
             $this->carritoModel->eliminarPorUsuario($usuario_id);
 
-            // Crear factura
             $factura_data = [
                 'orden_id' => $orden_id,
                 'numero_factura' => 'FAC-' . date('Ymd-His'),
@@ -108,9 +100,8 @@ class OrdenController extends BaseController
                 'total' => $total,
                 'estado' => 'pendiente'
             ];
-            $this->facturaModel->insert($factura_data);
+            $this->facturaModel->insert($factura_data); // Asegurar que la inserción funcione
 
-            // Confirmar transacción
             $this->db->transCommit();
 
             return redirect()->to('/orden/completar/' . $orden_id)->with('success', 'Compra iniciada con éxito. Revisa y finaliza.');
@@ -128,7 +119,20 @@ class OrdenController extends BaseController
         }
 
         $factura = $this->facturaModel->where('orden_id', $orden_id)->first();
-        $detalles = $this->detalleModel->where('orden_id', $orden_id)->findAll();
+        $detalles = $this->detalleModel
+                        ->select('orden_detalle.cantidad, orden_detalle.precio_unitario, orden_detalle.subtotal, producto.nombre')
+                        ->join('producto', 'producto.id = orden_detalle.producto_id')
+                        ->where('orden_detalle.orden_id', $orden_id)
+                        ->findAll();
+
+        if (!$factura) {
+            $factura = [
+                'numero_factura' => 'No disponible',
+                'fecha_emision' => date('Y-m-d H:i:s'),
+                'total' => $orden['total'],
+                'estado' => 'Pendiente (sin factura)'
+            ];
+        }
 
         return view('orden/completar', [
             'orden' => $orden,
@@ -146,7 +150,19 @@ class OrdenController extends BaseController
 
         $this->ordenModel->update($orden_id, ['estado' => 'finalizada']);
         $factura = $this->facturaModel->where('orden_id', $orden_id)->first();
-        $this->facturaModel->update($factura['id'], ['estado' => 'emitida']);
+        if ($factura) {
+            $this->facturaModel->update($factura['id'], ['estado' => 'emitida']);
+        } else {
+            // Crear una factura básica si no existe
+            $factura_data = [
+                'orden_id' => $orden_id,
+                'numero_factura' => 'FAC-' . date('Ymd-His'),
+                'fecha_emision' => date('Y-m-d H:i:s'),
+                'total' => $orden['total'],
+                'estado' => 'emitida'
+            ];
+            $this->facturaModel->insert($factura_data);
+        }
 
         return redirect()->to('/mi-cuenta')->with('success', 'Orden finalizada con éxito');
     }
