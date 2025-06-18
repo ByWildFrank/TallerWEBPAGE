@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Catálogo de Productos</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('views/navBar/navBar.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/navBar.css') ?>">
     <style>
         <?php include 'catalogo.css';?> 
     </style>

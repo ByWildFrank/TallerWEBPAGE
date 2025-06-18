@@ -43,12 +43,12 @@
 
         <div class="fotos-perfil">
             <div class="perfil-card">
-                <img src="../assets/img/santi.png" alt="Santiago - Data Scientist">
+                <img src="<?= base_url('assets/img/santi.png') ?>" alt="Santiago - Data Scientist">
                 <h5>Santiago</h5>
                 <p class="role">Data Scientist · CEO &amp; Co-founder</p>
             </div>
             <div class="perfil-card">
-                <img src="../assets/img/franco.png" alt="Franco - Software Engineer">
+                <img src="<?= base_url('assets/img/franco.png') ?>" alt="Franco - Software Engineer">
                 <h5>Franco</h5>
                 <p class="role">Software Engineer · CEO &amp; Co-founder</p>
             </div>

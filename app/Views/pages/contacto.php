@@ -24,7 +24,7 @@
         <h1>&bull; Sigamos en contacto &bull;</h1>
         <div class="underline"></div>
         <div class="icon_wrapper">
-            <img class="icon" src="../assets/img/iconoContacto.png" alt="Ícono contacto"></img>
+            <img class="icon" src="./assets/img/iconoContacto.png" alt="Ícono contacto"></img>
         </div>
         <form action="#" method="post" id="contact_form">
             <div class="text">

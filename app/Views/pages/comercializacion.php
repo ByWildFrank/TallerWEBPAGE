@@ -50,8 +50,8 @@
                     retirar personalmente, podés pasar por nuestro local y conocer de cerca nuestro proceso de tueste.
                 </p>
                 <div class="payment-img mt-4 text-center">
-                    <img src="../assets/img/andreani.svg" alt="Correo Argentino" class="img">
-                    <img src="../assets/img/correoarg.svg" alt="Andreani" class="img">
+                    <img src="<?= base_url('assets/img/correoarg.svg') ?>" alt="Correo Argentino" class="img">
+                    <img src="<?= base_url('assets/img/andreani.svg') ?>" alt="Andreani" class="img">
                 </div>
             </div>
 
@@ -64,11 +64,11 @@
                     expectativas, contamos con una política de devolución gratuita durante los primeros 7 días.
                 </p>
                 <div class="payment-img mt-4 text-center">
-                    <img src="../assets/img/visa.svg" alt="Visa" class="img">
-                    <img src="../assets/img/mastercard.svg" alt="Mastercard" class="img">
-                    <img src="../assets/img/americanexpress.svg" alt="American Express" class="img">
-                    <img src="../assets/img/mercadopago.svg" alt="Mercado Pago" class="img">
-                    <img src="../assets/img/paypal.svg" alt="PayPal" class="img">
+                    <img src="<?= base_url('assets/img/visa.svg') ?>" alt="Visa" class="img">
+                    <img src="<?= base_url('assets/img/mastercard.svg') ?>" alt="Mastercard" class="img">
+                    <img src="<?= base_url('assets/img/americanexpress.svg') ?>" alt="American Express" class="img">
+                    <img src="<?= base_url('assets/img/mercadopago.svg') ?>" alt="Mercado Pago" class="img">
+                    <img src="<?= base_url('assets/img/paypal.svg') ?>" alt="PayPal" class="img">
                 </div>
             </div>
 

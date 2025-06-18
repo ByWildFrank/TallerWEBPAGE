@@ -17,6 +17,7 @@ $routes->get('product/detalle/(:num)', 'ProductController::detalle/$1');
 $routes->get('login', 'Auth::login');
 $routes->post('auth/loginPost', 'Auth::loginPost');
 $routes->get('logout', 'Auth::logout');
+
 $routes->get('auth/login', 'Auth::login');
 
 
@@ -38,3 +39,7 @@ $routes->get('mi-cuenta', 'UserController::miCuenta', ['filter' => 'auth']);
 
 $routes->get('register', 'Auth::register');
 $routes->post('auth/registerPost', 'Auth::registerPost');
+
+//Acceso admin
+$routes->get('admin/panel', 'Admin::panel', ['filter' => 'auth:admin']);
+
