@@ -12,11 +12,11 @@
     <div class="container mt-5">
         <h1 class="mb-4">Panel de Administración</h1>
 
-        <?php if(session()->getFlashdata('error')): ?>
+        <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
         <?php endif; ?>
 
-        <p>Bienvenido/a, <strong><?= session()->get('usuario_nombre') ?></strong>.</p>
+        <p>Bienvenido/a, <strong><?= session()->get('nombre') ?></strong>.</p>
 
         <ul class="list-group mt-4">
             <li class="list-group-item">

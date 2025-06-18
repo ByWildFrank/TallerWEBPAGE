@@ -10,15 +10,18 @@ class AuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!session()->get('logged_in')) {
+        if (!session()->get('isLoggedIn')) {
             return redirect()->to('/login');
         }
 
         // Si se quiere filtrar por rol:
-        if ($arguments && !in_array(session()->get('usuario_rol'), $arguments)) {
+        if ($arguments && !in_array(session()->get('rol'), $arguments)) {
             return redirect()->to('/login')->with('error', 'Acceso denegado');
         }
     }
 
-    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null) {}
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
+    {
+        // No se necesita lógica aquí
+    }
 }
