@@ -1,75 +1,111 @@
-.catalogo-seccion {
-  padding: 2rem;
-  background-color: #f7f7f7;
+/* Reset y fuente base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.catalogo-titulo {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f1ec;
   color: #333;
 }
 
+/* Contenedor principal */
+.catalogo-seccion {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Título */
+.catalogo-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+}
+
+.catalogo-titulo::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #3a773c;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Grilla de productos */
 .catalogo-grilla {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
+/* Tarjeta */
 .tarjeta-producto {
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease;
 }
 
 .tarjeta-producto:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px);
 }
 
+/* Imagen */
 .tarjeta-imagen {
   width: 100%;
   height: 200px;
-  object-fit: contain; /* Evita distorsión y asegura que no se corte */
-  background-color: #fafafa;
+  object-fit: cover;
+  background-color: #f8f9fa;
+  padding: 10px;
 }
 
+/* Contenido */
 .tarjeta-cuerpo {
   padding: 1rem;
-  text-align: center;
   flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .tarjeta-titulo {
   font-size: 1.2rem;
-  color: #222;
-  margin: 0.5rem 0;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
 }
 
 .tarjeta-precio {
+  font-size: 1rem;
   color: #2a9d8f;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
+/* Botones */
 .tarjeta-botones {
   display: flex;
-  gap: 0.5rem;
   justify-content: center;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
 .boton-ver,
 .boton-agregar {
   text-decoration: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
-  font-size: 0.9rem;
   color: #fff;
+  font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
 
@@ -87,4 +123,48 @@
 
 .boton-agregar:hover {
   background-color: #21867a;
+}
+
+img.tarjeta-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+}
+.tarjeta-producto {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tarjeta-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .catalogo-titulo {
+    font-size: 2rem;
+  }
+
+  .tarjeta-imagen {
+    height: 180px;
+  }
+
+  .boton-ver,
+  .boton-agregar {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
 }
