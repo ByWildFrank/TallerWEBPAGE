@@ -7,21 +7,21 @@ use CodeIgniter\Controller;
 
 class ProductController extends Controller
 {
-public function index()
-{
-    $productModel = new ProductModel();
+    public function index()
+    {
+        $productModel = new ProductModel();
 
-    $data['productos'] = $productModel
-        ->where('estado', 1)
-        // ->where('stock >', 0)
-        ->findAll();
+        $data['productos'] = $productModel
+            ->where('estado', 1)
+            // ->where('stock >', 0)
+            ->findAll();
 
-    // Indicadores para ocultar secciones del layout
-    $data['noEditorsChoice'] = true;
-    $data['noHero'] = true;
+        // Indicadores para ocultar secciones del layout
+        $data['noEditorsChoice'] = true;
+        $data['noHero'] = true;
 
-    return view('productos/catalogo', $data);
-}
+        return view('productos/catalogo', $data);
+    }
 
 
 
@@ -34,6 +34,10 @@ public function index()
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Producto no encontrado");
         }
 
-        return view('productos/detalle', ['producto' => $producto]);
+        return view('productos/detalle', [
+        'producto' => $producto,
+        'noHero' => true,
+        'noEditorsChoice' => true
+    ]);
     }
 }

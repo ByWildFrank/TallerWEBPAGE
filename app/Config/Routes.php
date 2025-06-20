@@ -44,3 +44,4 @@ $routes->post('auth/registerPost', 'Auth::registerPost');
 //Acceso admin
 $routes->get('admin/panel', 'Admin::panel', ['filter' => 'auth:admin']);
 
+$routes->get('/orden/imprimirFactura/(:num)', 'OrdenController::imprimirFactura/$1');

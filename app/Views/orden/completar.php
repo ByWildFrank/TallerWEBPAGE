@@ -52,6 +52,7 @@
     </div>
 
     <div class="actions mt-4">
+        <a href="<?= base_url('/orden/imprimirFactura/' . $orden['id']) ?>" class="btn btn-primary me-2">Descargar Factura</a>
         <a href="<?= base_url('/orden/finalizar/' . $orden['id']) ?>" class="btn btn-success me-2">Finalizar Compra</a>
         <a href="<?= base_url('/carrito/ver') ?>" class="btn btn-secondary">Volver al Carrito</a>
     </div>

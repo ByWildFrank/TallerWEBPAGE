@@ -45,7 +45,7 @@
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="<?= base_url('mi-cuenta') ?>">Mi Cuenta</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('carrito') ?>">Mi Carrito</a></li>
-                <li><a class="dropdown-item" href="<?= base_url('mis-pedidos') ?>">Mis Pedidos</a></li>
+                
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="<?= base_url('logout') ?>">Cerrar Sesión</a></li>
               </ul>
