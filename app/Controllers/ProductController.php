@@ -20,13 +20,11 @@ class ProductController extends Controller
 
         // Obtener parámetros de filtrado y búsqueda
         $pais_origen = $this->request->getGet('pais_origen');
-        $precio_min = $this->request->getGet('precio_min');
         $precio_max = $this->request->getGet('precio_max');
         $busqueda = $this->request->getGet('busqueda');
 
         // Pasar los valores de los parámetros a la vista
         $data['pais_origen'] = $pais_origen;
-        $data['precio_min'] = $precio_min;
         $data['precio_max'] = $precio_max;
         $data['busqueda'] = $busqueda;
 
@@ -38,10 +36,7 @@ class ProductController extends Controller
             $productos = $productos->where('pais_origen', $pais_origen);
         }
 
-        // Filtrar por rango de precio
-        if ($precio_min !== null) {
-            $productos = $productos->where('precio >=', $precio_min);
-        }
+        // Filtrar por precio máximo
         if ($precio_max !== null) {
             $productos = $productos->where('precio <=', $precio_max);
         }
@@ -55,6 +50,10 @@ class ProductController extends Controller
 
         // Obtener lista de países para el filtro
         $data['paises'] = $this->productModel->distinct()->select('pais_origen')->findAll();
+
+        // Obtener el precio máximo para el slider
+        $maxPrecio = $this->productModel->selectMax('precio')->first()['precio'] ?? 100; // Valor por defecto si no hay productos
+        $data['maxPrecio'] = $maxPrecio;
 
         // Indicadores para ocultar secciones del layout
         $data['noEditorsChoice'] = true;

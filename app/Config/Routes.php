@@ -45,3 +45,8 @@ $routes->post('auth/registerPost', 'Auth::registerPost');
 $routes->get('admin/panel', 'Admin::panel', ['filter' => 'auth:admin']);
 
 $routes->get('/orden/imprimirFactura/(:num)', 'OrdenController::imprimirFactura/$1');
+
+//Contacto
+$routes->get('/contacto', 'ContactController::contacto');
+$routes->get('/contacto_logueado', 'ContactController::contacto_logueado');
+$routes->post('/contact/submit', 'ContactController::submit');

@@ -1,7 +1,6 @@
 <?= $this->extend('layouts/layoutBase') ?>
 
-<?php $noHero = true;
-$noEditorsChoice = true; ?>
+<?php $noHero = true; $noEditorsChoice = true; ?>
 
 <?= $this->section('styles') ?>
 <link rel="stylesheet" href="<?= base_url('assets/css/contacto.css') ?>">
@@ -10,7 +9,7 @@ $noEditorsChoice = true; ?>
 
 <?= $this->section('content') ?>
 <div id="container" class="p-4">
-    <h1>• Sigamos en contacto •</h1>
+    <h1>• Envíanos tu consulta •</h1>
     <div class="underline"></div>
     <div class="icon_wrapper">
         <img class="icon" src="<?= base_url('assets/img/iconoContacto.png') ?>" alt="Ícono contacto">
@@ -23,13 +22,21 @@ $noEditorsChoice = true; ?>
     <?php endif; ?>
     <form action="<?= base_url('contact/submit') ?>" method="post" id="contact_form">
         <div class="text">
-            <input type="text" placeholder="Mi nombre es" name="nombre" id="name_input" value="<?= set_value('nombre') ?>" required>
+            <p><strong>Nombre:</strong> <?= esc($usuario['nombre']) ?></p>
         </div>
         <div class="email">
-            <input type="email" placeholder="Mi e-mail es" name="email" id="email_input" value="<?= set_value('email') ?>" required>
+            <p><strong>Email:</strong> <?= esc($usuario['email']) ?></p>
         </div>
         <div class="telephone">
-            <input type="text" placeholder="Mi número (opcional)" name="telephone" id="telephone_input" value="<?= set_value('telephone') ?>">
+            <?php if (!empty($usuario['telefono'])): ?>
+                <p><strong>Teléfono:</strong> <?= esc($usuario['telefono']) ?></p>
+            <?php endif; ?>
+            <!-- Campos ocultos para enviar datos -->
+            <input type="hidden" name="nombre" value="<?= esc($usuario['nombre'] ?? '') ?>">
+            <input type="hidden" name="email" value="<?= esc($usuario['email'] ?? '') ?>">
+            <?php if (!empty($usuario['telefono'])): ?>
+                <input type="hidden" name="telephone" value="<?= esc($usuario['telefono'] ?? '') ?>">
+            <?php endif; ?>
         </div>
         <div class="message">
             <textarea name="message" placeholder="Mi consulta/duda es..." id="message_input" cols="30" rows="5" required><?= set_value('message') ?></textarea>
