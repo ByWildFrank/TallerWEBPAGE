@@ -2,7 +2,40 @@
 
 <?= $this->section('styles') ?>
 <link rel="stylesheet" href="<?= base_url('assets/css/catalogo.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/catalogo.css?v=' . time()) ?>">
+
 <style>
+  /* Para el filtro aplicar estilos desde aquí si o si*/
+  .catalogo-seccion {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+
+  .catalogo-titulo {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .catalogo-grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .tarjeta-producto {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+
+  .tarjeta-producto:hover {
+    transform: translateY(-5px);
+  }
+
   .filtro-seccion {
     margin-bottom: 20px;
     padding: 20px;
@@ -33,36 +66,6 @@
   .slider {
     width: 100%;
     max-width: 300px;
-  }
-
-  .catalogo-seccion {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-  }
-
-  .catalogo-titulo {
-    color: #2c3e50;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  .catalogo-grilla {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
-  }
-
-  .tarjeta-producto {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-  }
-
-  .tarjeta-producto:hover {
-    transform: translateY(-5px);
   }
 </style>
 <?= $this->endSection() ?>
