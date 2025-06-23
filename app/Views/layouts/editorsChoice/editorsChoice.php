@@ -17,7 +17,9 @@
       <h2>Tailandia del norte</h2>
       <p>Notas de almendra tostada y vainilla, sabor dulce y redondo.</p>
       <p><strong>Origen:</strong> Tailandia</p>
-      <button class="alert-button">Más información</button>
+      <button >
+        <a class="btn" href="<?= base_url('catalogo') ?>">Ver más</a>
+      </button>
     </div>
   </div>
   <div class="carousel-slide">
@@ -26,7 +28,9 @@
       <h2>Tanzania Silvestre</h2>
       <p>Notas de mora y té negro, sabor intenso y aromático.</p>
       <p><strong>Origen:</strong> Tanzania</p>
-      <button class="alert-button">Más información</button>
+     <button >
+        <a class="btn" href="<?= base_url('catalogo') ?>">Ver más</a>
+      </button>
     </div>
   </div>
   <div class="carousel-slide">
@@ -35,7 +39,9 @@
       <h2>Colombia Supremo</h2>
       <p>Notas de chocolate y nuez, sabor dulce.</p>
       <p><strong>Origen:</strong> Colombia</p>
-      <button class="alert-button">Más información</button>
+      <button >
+        <a class="btn" href="<?= base_url('catalogo') ?>">Ver más</a>
+      </button>
     </div>
   </div>
 

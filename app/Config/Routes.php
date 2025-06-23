@@ -43,4 +43,13 @@ $routes->post('auth/registerPost', 'Auth::registerPost');
 
 //Acceso admin
 $routes->get('admin/panel', 'Admin::panel', ['filter' => 'auth:admin']);
+$routes->get('admin', 'AdminController::index', ['filter' => 'auth:admin']);
+$routes->get('admin/productos', 'AdminController::productos', ['filter' => 'auth:admin']);
+$routes->post('admin/productos/guardar', 'AdminController::guardar', ['filter' => 'auth:admin']);
 
+$routes->get('/orden/imprimirFactura/(:num)', 'OrdenController::imprimirFactura/$1');
+
+//Contacto
+$routes->get('/contacto', 'ContactController::contacto');
+$routes->get('/contacto_logueado', 'ContactController::contacto_logueado');
+$routes->post('/contact/submit', 'ContactController::submit');

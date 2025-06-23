@@ -44,6 +44,9 @@
         <div class="back-link">
             <a href="<?= base_url('/') ?>">← Volver al inicio</a>
         </div>
+        <div class="back-link">
+             <a class="nav-link" href="<?= base_url('register') ?>">Sos nuevo? Registrarse</a>
+        </div>
     </div>
 </body>
 </html>
