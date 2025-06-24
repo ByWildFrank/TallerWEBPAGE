@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro - BEAN</title>
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <style>
         <?php include 'register.css'; ?>
     </style>
