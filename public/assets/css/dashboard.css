@@ -1,0 +1,96 @@
+.dashboard-wrapper h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-wrapper h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.dashboard-wrapper .stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.dashboard-wrapper .stats p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.dashboard-wrapper canvas {
+  width: 100% !important;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.dashboard-wrapper ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.dashboard-wrapper ul li {
+  margin-bottom: 0.4rem;
+  margin-left: 0.9rem;
+}
+
+.dashboard-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-top: 1rem;
+}
+
+.dashboard-wrapper table thead {
+  background-color: #eee;
+}
+
+.dashboard-wrapper table th,
+.dashboard-wrapper table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.dashboard-wrapper table th {
+  font-weight: 600;
+}
+
+.dashboard-wrapper table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+
+@media (max-width: 768px) {
+  .dashboard-wrapper .stats {
+    flex-direction: column;
+  }
+
+  .dashboard-wrapper table,
+  .dashboard-wrapper thead,
+  .dashboard-wrapper tbody,
+  .dashboard-wrapper th,
+  .dashboard-wrapper td,
+  .dashboard-wrapper tr {
+    font-size: 0.95rem;
+  }
+}

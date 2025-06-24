@@ -26,6 +26,9 @@
                 <a href="<?= base_url('admin/productos') ?>">📦 Gestionar Productos</a>
             </li>
             <li class="list-group-item">
+                <a href="<?= base_url('admin/dashboard') ?>">📈 Dashboard</a>
+            </li>
+            <li class="list-group-item">
                 <a href="<?= base_url('logout') ?>">🚪 Cerrar sesión</a>
             </li>
         </ul>
