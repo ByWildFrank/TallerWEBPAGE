@@ -50,7 +50,7 @@ class CarritoController extends BaseController
 
     public function ver()
     {
-       $usuario_id = session()->get('id');
+        $usuario_id = session()->get('id');
 
         $data = [
             'items' => $this->carritoModel->obtenerItemsPorUsuario($usuario_id),
@@ -59,7 +59,6 @@ class CarritoController extends BaseController
         ];
 
         return view('carrito/ver', $data);
-
     }
 
     public function eliminar($id_item)
@@ -69,14 +68,15 @@ class CarritoController extends BaseController
     }
 
     public function actualizar()
-{
-    $id_item = $this->request->getPost('id_item');
-    $cantidad = $this->request->getPost('cantidad');
-    
-    if ($this->carritoModel->update($id_item, ['cantidad' => $cantidad])) {
-        return $this->response->setJSON(['success' => true]);
-    } else {
-        return $this->response->setJSON(['success' => false, 'error' => 'No se pudo actualizar la cantidad']);
+    {
+        $id_item = $this->request->getPost('id_item');
+        $cantidad = $this->request->getPost('cantidad');
+
+        if ($this->carritoModel->update($id_item, ['cantidad' => $cantidad])) {
+            return $this->response->setJSON(['success' => true]);
+        } else {
+            return $this->response->setJSON(['success' => false, 'error' => 'No se pudo actualizar la cantidad']);
+        }
     }
-}
+    
 }

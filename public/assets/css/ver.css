@@ -143,3 +143,16 @@ p {
         color: #4B2E83;
     }
 }
+.table img {
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #2a9d8f;
+    border-color: #2a9d8f;
+}
+
+.btn-primary:hover {
+    background-color: #21867a;
+    border-color: #1f7a6e;
+}

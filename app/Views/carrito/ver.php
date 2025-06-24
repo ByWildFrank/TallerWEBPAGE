@@ -14,6 +14,7 @@
         <table class="table" style="padding: 20px;">
             <thead>
                 <tr>
+                    <th>Imagen</th>
                     <th>Producto</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
@@ -22,20 +23,21 @@
                 </tr>
             </thead>
             <tbody>
-                <?php 
+                <?php
                 $total = 0;
                 foreach ($items as $item):
                     $subtotal = $item['precio'] * $item['cantidad'];
-                    $total += $subtotal; 
+                    $total += $subtotal;
                 ?>
                     <tr>
+                        <td><img src="<?= base_url('assets/img/Products/' . esc($item['imagen'] ?? 'default.jpg')) ?>" alt="<?= esc($item['nombre']) ?>" style="width: 50px; height: 50px; object-fit: cover;"></td>
                         <td><?= esc($item['nombre']) ?></td>
                         <td id="price-<?= $item['id'] ?>">$<?= number_format($item['precio'], 2) ?></td>
                         <td>
                             <div style="display: inline-flex; align-items: center;">
-                                <button class="btn btn-sm btn-secondary" onclick="decreaseQuantity(<?= $item['id'] ?>)">-</button>
+                                <button type="button" class="btn btn-sm btn-secondary" onclick="decreaseQuantity(<?= $item['id'] ?>)">-</button>
                                 <input type="text" class="form-control" value="<?= $item['cantidad'] ?>" id="quantity-<?= $item['id'] ?>" readonly style="width: 50px; text-align: center; margin: 0 5px;">
-                                <button class="btn btn-sm btn-secondary" onclick="increaseQuantity(<?= $item['id'] ?>)">+</button>
+                                <button type="button" class="btn btn-sm btn-secondary" onclick="increaseQuantity(<?= $item['id'] ?>, <?= $item['stock'] ?>)">+</button>
                             </div>
                         </td>
                         <td id="subtotal-<?= $item['id'] ?>">$<?= number_format($subtotal, 2) ?></td>
@@ -51,6 +53,7 @@
         <form action="<?= base_url('/orden/procesar') ?>" method="post">
             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
             <button type="submit" class="btn btn-success">Finalizar compra</button>
+            <a href="<?= base_url('catalogo') ?>" class="btn btn-primary ms-2">Agregar más productos</a>
         </form>
     <?php endif; ?>
 </section>
@@ -75,9 +78,13 @@
             }
         };
 
-        window.increaseQuantity = function(id) {
+        window.increaseQuantity = function(id, stock) {
             var currentQuantity = parseInt($('#quantity-' + id).val());
-            updateQuantity(id, currentQuantity + 1);
+            if (currentQuantity < stock) {
+                updateQuantity(id, currentQuantity + 1);
+            } else {
+                alert('No puedes exceder el stock disponible: ' + stock);
+            }
         };
 
         window.updateQuantity = function(id, quantity) {

@@ -75,3 +75,8 @@ a {
 .offcanvas-header {
     background-color: #f4f0e5;
 }
+.badge.bg-primary {
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
