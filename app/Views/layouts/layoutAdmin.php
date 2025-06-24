@@ -31,7 +31,7 @@
                         <a class="nav-link" href="<?= base_url('admin/productos') ?>">📦 Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">📈 Dashboardddddddddddddd</a>
+                        <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">📈 Dashboard</a>
                     </li>
                 </ul>
                 <span class="navbar-text me-3 text-white">
