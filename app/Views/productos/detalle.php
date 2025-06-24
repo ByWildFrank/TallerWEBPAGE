@@ -34,7 +34,7 @@
             <p><strong>Origen:</strong> <?= esc($producto['pais_origen']) ?></p>
             <p><strong>Stock disponible:</strong> <?= esc($producto['stock']) ?></p>
             <div class="tarjeta-botones">
-                <a href="<?= base_url('carrito/agregar/' . $producto['id']) ?>" class="btn btn-success">Agregar al carrito</a>
+                <a href="<?= base_url('carrito/agregar/' . $producto['id']) ?>" class="btn btn-success boton-agregar <?= $producto['stock'] == 0 ? 'disabled' : '' ?>" <?= $producto['stock'] == 0 ? 'onclick="return false;"' : '' ?>>Agregar al carrito</a>
                 <a href="<?= base_url('catalogo') ?>" class="btn btn-secondary">Volver al catálogo</a>
             </div>
         </div>

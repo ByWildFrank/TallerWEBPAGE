@@ -1,6 +1,7 @@
 <?= $this->extend('layouts/layoutBase') ?>
 
-<?php $noHero = true; $noEditorsChoice = true; ?>
+<?php $noHero = true;
+$noEditorsChoice = true; ?>
 
 <?= $this->section('styles') ?>
 <link rel="stylesheet" href="<?= base_url('assets/css/mi-cuenta.css') ?>">
@@ -48,7 +49,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($ordenes as $orden): 
+                    <?php foreach ($ordenes as $orden):
                         $factura = $facturas[$orden['id']] ?? null;
                     ?>
                         <tr>
@@ -59,7 +60,8 @@
                             <td class="factura-info">
                                 <?php if ($factura): ?>
                                     Número: <?= esc($factura['numero_factura']) ?><br>
-                                    Estado: <?= esc($factura['estado']) ?>
+                                    Estado: <?= esc($factura['estado']) ?><br>
+                                    <a href="<?= base_url('/orden/imprimirFactura/' . $orden['id']) ?>" class="btn btn-sm btn-primary mt-1">Descargar Factura</a>
                                 <?php else: ?>
                                     <span class="text-muted">No disponible</span>
                                 <?php endif; ?>

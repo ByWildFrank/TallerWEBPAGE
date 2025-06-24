@@ -6,14 +6,17 @@ use App\Models\ProductModel;
 use CodeIgniter\Controller;
 use App\Models\UserModel;
 use App\Models\OrdenModel;
+use App\Models\ConsultaModel;
 
 class AdminController extends Controller
 {
     protected $productoModel;
+    protected $consultaModel;
 
     public function __construct()
     {
         $this->productoModel = new ProductModel();
+        $this->consultaModel = new ConsultaModel();
     }
 
     public function index()
@@ -204,8 +207,8 @@ class AdminController extends Controller
         // Stock por estado
         $stockEstados = $productoModel->select("estado, COUNT(*) as cantidad")
             ->groupBy('estado')->findAll();
-        
-        
+
+
 
         return view('admin/dashboard', [
             'productosStock'    => $productosStock,
@@ -222,7 +225,24 @@ class AdminController extends Controller
             'noEditorsChoice'   => true
         ]);
     }
+    public function consultas()
+    {
+        $consultas = $this->consultaModel->select('consulta.*, usuario.nombre as usuario_nombre')
+            ->join('usuario', 'usuario.id = consulta.usuario_id', 'left')
+            ->orderBy('fecha', 'DESC')
+            ->findAll();
+        return view('admin/consultas', ['consultas' => $consultas]);
+    }
+    public function cambiarEstadoConsulta($id)
+    {
+        $consulta = $this->consultaModel->find($id);
+        if (!$consulta) {
+            return redirect()->to('/admin/consultas')->with('error', 'Consulta no encontrada.');
+        }
 
+        $nuevoEstado = $consulta['estado'] === 'pendiente' ? 'respondida' : 'pendiente';
+        $this->consultaModel->update($id, ['estado' => $nuevoEstado]);
 
-
+        return redirect()->to('/admin/consultas')->with('success', 'Estado de la consulta actualizado correctamente.');
+    }
 }

@@ -1,3 +1,12 @@
+<?php
+
+use App\Models\CarritoModel;
+
+$carritoModel = new CarritoModel();
+$usuario_id = session()->get('id');
+$cartCount = $usuario_id ? count($carritoModel->where('usuario_id', $usuario_id)->findAll()) : 0;
+?>
+
 <nav class="navbar navbar-expand-xl">
   <div class="container">
     <!-- Botón hamburguesa -->
@@ -45,10 +54,11 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="<?= base_url('mi-cuenta') ?>">Mi Cuenta</a></li>
-                <li><a class="dropdown-item" href="<?= base_url('carrito') ?>">Mi Carrito</a></li>
-                <!-- Agregar Contacto también en el dropdown si lo deseas -->
+                <li><a class="dropdown-item" href="<?= base_url('carrito') ?>">Mi Carrito <span class="badge bg-primary rounded-pill"><?= $cartCount ?></span></a></li> <!-- Agregar Contacto también en el dropdown si lo deseas -->
                 <li><a class="dropdown-item" href="<?= base_url('contacto_logueado') ?>">Contacto</a></li>
-                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
                 <li><a class="dropdown-item" href="<?= base_url('logout') ?>">Cerrar Sesión</a></li>
               </ul>
             </li>

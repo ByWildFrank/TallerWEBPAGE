@@ -7,8 +7,8 @@
 
 <?= $this->section('content') ?>
 <section id="confirmar-compra" class="confirmar-compra container py-5">
-    <h2>Confirmar Compra</h2>
-    <p>Revisa los detalles de tu orden antes de finalizarla.</p>
+    <h2>Compra Confirmada</h2>
+    <p>Revisa los detalles de tu compra</p>
 
     <div class="order-details">
         <h3>Orden #<?= esc($orden['id']) ?></h3>

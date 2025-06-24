@@ -2,7 +2,6 @@
 
 <?= $this->section('styles') ?>
 <link rel="stylesheet" href="<?= base_url('assets/css/catalogo.css') ?>">
-<link rel="stylesheet" href="<?= base_url('assets/css/catalogo.css?v=' . time()) ?>">
 
 <style>
   /* Para el filtro aplicar estilos desde aquí si o si*/
@@ -116,9 +115,12 @@
         <div class="tarjeta-cuerpo">
           <h3 class="tarjeta-titulo"><?= esc($producto['nombre']) ?></h3>
           <p class="tarjeta-precio">$<?= number_format($producto['precio'], 2) ?></p>
+          <?php if ($producto['stock'] <= 10): ?>
+            <p class="tarjeta-stock text-danger">¡Quedan solo <?= esc($producto['stock']) ?> unidades!</p>
+          <?php endif; ?>
           <div class="tarjeta-botones">
             <a href="<?= base_url('product/detalle/' . $producto['id']) ?>" class="boton-ver">Ver más</a>
-            <a href="<?= base_url('carrito/agregar/' . $producto['id']) ?>" class="boton-agregar">Agregar al carrito</a>
+                <a href="<?= base_url('carrito/agregar/' . $producto['id']) ?>" class="btn btn-success boton-agregar <?= $producto['stock'] == 0 ? 'disabled' : '' ?>" <?= $producto['stock'] == 0 ? 'onclick="return false;"' : '' ?>>Agregar al carrito</a>
           </div>
         </div>
       </div>
