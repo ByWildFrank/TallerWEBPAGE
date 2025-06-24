@@ -43,6 +43,8 @@ $routes->get('admin/panel', 'Admin::panel', ['filter' => 'auth:admin']);
 $routes->get('admin', 'AdminController::index', ['filter' => 'auth:admin']);
 $routes->get('admin/productos', 'AdminController::productos', ['filter' => 'auth:admin']);
 $routes->post('admin/productos/guardar', 'AdminController::guardar', ['filter' => 'auth:admin']);
+$routes->get('admin/productos/editar/(:num)', 'AdminController::editarProducto/$1', ['filter' => 'auth:admin']);
+$routes->post('admin/productos/actualizar/(:num)', 'AdminController::actualizarProducto/$1', ['filter' => 'auth:admin']);
 $routes->get('admin/consultas', 'AdminController::consultas', ['filter' => 'auth:admin']);
 $routes->get('admin/consultas/cambiarEstado/(:num)', 'AdminController::cambiarEstadoConsulta/$1', ['filter' => 'auth:admin']); // Nueva ruta
 

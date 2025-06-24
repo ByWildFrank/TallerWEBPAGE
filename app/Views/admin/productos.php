@@ -52,12 +52,34 @@
         background-color: #233240;
         border-color: #233240;
     }
+
+    .admin-tabla {
+        max-width: 1000px;
+        margin: 40px auto;
+    }
+
+    .admin-tabla table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .admin-tabla th,
+    .admin-tabla td {
+        border: 1px solid #dee2e6;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .admin-tabla th {
+        background-color: #f1f1f1;
+    }
 </style>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 <div class="admin-producto">
-    <h2>Agregar Nuevo Producto</h2>
+    <h2><?= isset($producto) ? 'Editar Producto' : 'Agregar Nuevo Producto' ?></h2>
 
     <?php if (session()->getFlashdata('success')): ?>
         <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
@@ -66,43 +88,85 @@
         <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
     <?php endif; ?>
 
-    <form action="<?= base_url('admin/productos/guardar') ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= isset($producto) ? base_url('admin/productos/actualizar/' . $producto['id']) : base_url('admin/productos/guardar') ?>" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="<?= old('nombre', $producto['nombre'] ?? '') ?>" required>
         </div>
         <div class="form-group">
             <label for="descripcion">Descripción</label>
-            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required><?= old('descripcion', $producto['descripcion'] ?? '') ?></textarea>
         </div>
         <div class="form-group">
             <label for="precio">Precio</label>
-            <input type="number" step="0.01" class="form-control" id="precio" name="precio" required>
+            <input type="number" step="0.01" class="form-control" id="precio" name="precio" value="<?= old('precio', $producto['precio'] ?? '') ?>" required>
         </div>
         <div class="form-group">
             <label for="stock">Stock</label>
-            <input type="number" class="form-control" id="stock" name="stock" required>
+            <input type="number" class="form-control" id="stock" name="stock" value="<?= old('stock', $producto['stock'] ?? '') ?>" required>
         </div>
         <div class="form-group">
             <label for="estado">Estado</label>
             <select class="form-control" id="estado" name="estado" required>
-                <option value="disponible">Disponible</option>
-                <option value="no disponible">No disponible</option>
+                <option value="1" <?= old('estado', $producto['estado'] ?? '') == '1' ? 'selected' : '' ?>>Disponible</option>
+                <option value="0" <?= old('estado', $producto['estado'] ?? '') == '0' ? 'selected' : '' ?>>No disponible</option>
             </select>
         </div>
         <div class="form-group">
             <label for="pais_origen">País de Origen</label>
-            <input type="text" class="form-control" id="pais_origen" name="pais_origen" required>
+            <input type="text" class="form-control" id="pais_origen" name="pais_origen" value="<?= old('pais_origen', $producto['pais_origen'] ?? '') ?>" required>
         </div>
         <div class="form-group">
             <label>Imagen</label>
             <div class="drop-zone" id="drop-zone">Arrastra una imagen aquí o haz clic para seleccionar<br><span>(Formatos aceptados: JPG, PNG)</span></div>
-            <input type="file" id="imagen" name="imagen" accept="image/jpeg,image/png" style="display: none;" required>
-            <div id="preview"></div>
+            <input type="file" id="imagen" name="imagen" accept="image/jpeg,image/png" style="display: none;" <?= isset($producto) ? '' : 'required' ?>>
+            <div id="preview">
+                <?php if (isset($producto['imagen'])): ?>
+                    <img src="<?= base_url('assets/img/Products/' . $producto['imagen']) ?>" class="preview-image">
+                <?php endif; ?>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Guardar Producto</button>
+        <button type="submit" class="btn btn-primary"><?= isset($producto) ? 'Actualizar Producto' : 'Guardar Producto' ?></button>
     </form>
 </div>
+
+<?php if (isset($productos) && count($productos) > 0): ?>
+<div class="admin-tabla">
+    <h2>Productos Existentes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Estado</th>
+                <th>Origen</th>
+                <th>Imagen</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($productos as $p): ?>
+                <tr>
+                    <td><?= esc($p['nombre']) ?></td>
+                    <td>$<?= number_format($p['precio'], 2, ',', '.') ?></td>
+                    <td><?= esc($p['stock']) ?></td>
+                    <td><?= $p['estado'] == 1 ? 'Disponible' : 'No disponible' ?></td>
+                    <td><?= esc($p['pais_origen']) ?></td>
+                    <td>
+                        <?php if ($p['imagen']): ?>
+                            <img src="<?= base_url('assets/img/Products/' . $p['imagen']) ?>" width="60">
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <a href="<?= base_url('admin/productos/editar/' . $p['id']) ?>" class="btn btn-sm btn-warning">Editar</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php endif; ?>
 <?= $this->endSection() ?>
 
 <?= $this->section('scripts') ?>

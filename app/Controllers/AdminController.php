@@ -26,8 +26,10 @@ class AdminController extends Controller
 
     public function productos()
     {
-        return view('admin/productos');
+        $productos = $this->productoModel->findAll();
+        return view('admin/productos', ['productos' => $productos]);
     }
+
 
     public function guardar()
     {
@@ -38,7 +40,7 @@ class AdminController extends Controller
             'descripcion' => 'required',
             'precio' => 'required|numeric',
             'stock' => 'required|integer',
-            'estado' => 'required|in_list[disponible,no disponible]',
+            'estado' => 'required|in_list[0,1]',
             'pais_origen' => 'required',
             'imagen' => 'uploaded[imagen]|is_image[imagen]|max_size[imagen,4096]' // Máximo 4MB
         ];
@@ -245,4 +247,58 @@ class AdminController extends Controller
 
         return redirect()->to('/admin/consultas')->with('success', 'Estado de la consulta actualizado correctamente.');
     }
+        public function editarProducto($id)
+    {
+        $producto = $this->productoModel->find($id);
+        if (!$producto) {
+            return redirect()->to('/admin/productos')->with('error', 'Producto no encontrado.');
+        }
+
+        return view('admin/productos', ['producto' => $producto]);
+    }
+    public function actualizarProducto($id)
+{
+    $rules = [
+        'nombre' => 'required',
+        'descripcion' => 'required',
+        'precio' => 'required|numeric',
+        'stock' => 'required|integer',
+        'estado' => 'required|in_list[0,1]',
+        'pais_origen' => 'required',
+        'imagen' => 'permit_empty|is_image[imagen]|max_size[imagen,4096]'
+    ];
+
+    if (!$this->validate($rules)) {
+        return redirect()->back()->withInput()->with('error', $this->validator->listErrors());
+    }
+
+    $producto = $this->productoModel->find($id);
+    if (!$producto) {
+        return redirect()->to('/admin/productos')->with('error', 'Producto no encontrado.');
+    }
+
+    $imagen = $producto['imagen'];
+
+    $file = $this->request->getFile('imagen');
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+        $newName = $file->getRandomName();
+        $file->move(WRITEPATH . '../public/assets/img/Products/', $newName);
+        $imagen = $newName;
+    }
+
+    $data = [
+        'nombre'       => $this->request->getPost('nombre'),
+        'descripcion'  => $this->request->getPost('descripcion'),
+        'precio'       => $this->request->getPost('precio'),
+        'stock'        => $this->request->getPost('stock'),
+        'estado'       => $this->request->getPost('estado'),
+        'pais_origen'  => $this->request->getPost('pais_origen'),
+        'imagen'       => $imagen
+    ];
+
+    $this->productoModel->update($id, $data);
+
+    return redirect()->to('/admin/productos')->with('success', 'Producto actualizado exitosamente.');
+}
+
 }
